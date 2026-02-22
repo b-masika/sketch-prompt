@@ -52,12 +52,17 @@ const Random = () => {
             </div>
 
             {/* Main Card */}
-            <div className="max-w-2xl w-full bg-white rounded-3xl shadow-cl overflow hidden border border-purple-50">
+            <div className="max-w-2xl w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-purple-50">
                 <div className="relative">
                     <img 
                     src={currentPrompt.image} 
                     alt={currentPrompt.title}
                     className="w-full h-72 object-cover"
+                    loading="lazy"
+                    onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = "https://placehold.co/800x600/6366f1/white?text=Click+Generate+Again";
+                    }}
                     />
                     <button className="absolute top-4 right-4 bg-white/90 p-2 rounded-full shadow-md hover:bg-white transition-colors">
                         🔖
@@ -67,7 +72,7 @@ const Random = () => {
                 <div className="p-8">
                     <div className="flex justify-between items-center mb-4">
                         <h2 className="text-2xl font-bold text-gray-800">{currentPrompt.title}</h2>
-                        <span className={'px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${getDifficultyColor(currentPrompt.difficulty)}'}>
+                        <span className={`px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${getDifficultyColor(currentPrompt.difficulty)}`}>
                             {currentPrompt.difficulty}
                         </span>
                     </div>
