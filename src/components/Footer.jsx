@@ -30,5 +30,7 @@ const Footer = () => {
                 © 2026 SketchPrompt. All rights reserved.
             </div>
         </footer>
-    )
-}
+    );
+};
+
+export default Footer;

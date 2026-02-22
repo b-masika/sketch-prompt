@@ -1,7 +1,7 @@
 import { usePromptStore } from "../store/usePromptStore";
 
 const Hero = () => {
-    const generatePrompt = usePromptStore(() => state.generatePrompt);
+    const generatePrompt = usePromptStore((state) => state.generatePrompt);
 
     return (
         <section className="w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white py-24 text-center">
@@ -9,7 +9,7 @@ const Hero = () => {
                 Urban Sketch Inspiration
             </h1>
             <p className="max-w-2xl mx-auto mb-8 text-lg">
-                Never run out od ideas. Get daily prompts designed for everyday sketchers.
+                Never run out of ideas. Get daily prompts designed for everyday sketchers.
             </p>
 
             <button
