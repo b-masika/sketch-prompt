@@ -27,18 +27,21 @@ const Home = () => {
                     icon="🎲"
                     title="Random Prompts"
                     description="Get instant inspiration with our random sketch prompt generator"
+                    to="/random"
                     />
 
                     <FeatureCard
                     icon="📅"
                     title="Calendar Prompts"
                     description="Follow structured daily or weekly prompts to build your sketching habit"
+                    to="calendar"
                     />
 
                     <FeatureCard
                     icon="❤️"
                     title="Mood Selector"
                     description="Choose your mood or theme and discover matching prompts."
+                    to="/mood"
                     />
                 </div>
             </section>
