@@ -5,7 +5,7 @@ import Layout from './components/Layout';
 // Importing page components
 import Home from './pages/Home';
 import Calendar from './pages/Calendar';
-import Mood from './pages/Mood';
+import MoodSelector from './pages/MoodSelector';
 import Random from './pages/Random';
 import Saved from './pages/Saved';
 
@@ -15,7 +15,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} /> {/* This is the default route for the home page */}
         <Route path="calendar" element={<Calendar />} />
-        <Route path="mood" element={<Mood />} />
+        <Route path="moodSelector" element={<MoodSelector />} />
         <Route path="random" element={<Random />} />
         <Route path="saved" element={<Saved />} />
       </Route>

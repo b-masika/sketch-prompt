@@ -1,9 +1,10 @@
 // 
 import React, { useEffect, useState } from "react";
-import { prompts } from "../data/prompts"
+import toast, { Toaster } from "react-hot-toast";
+import { prompts } from "../data/prompts";
 
 const Random = () => {
-    const [currentPrompt, setCurrentPrompt] = useState(null);
+    const [currentPrompt, setCurrentPrompt] = useState(prompts[0]);
 
     useEffect(() => {
         if (prompts && prompts.length > 0) {
@@ -38,9 +39,26 @@ const Random = () => {
         }
     };
 
+    const handleCopy = async () => {
+        try {
+            const textToCopy = `${currentPrompt.title}: ${currentPrompt.description}`
+            await navigator.clipboard.writeText(textToCopy);
+            toast.success("Prompt copied to clipboard!", {
+                icon: "🎨",
+                duration: 3000,
+                position: "bottom-center",
+            });
+        } catch (err) {
+            console.error('Failed to copy:', err);
+        }
+
+    };
+
     return (
         <div className="min-h-screen bg-[#FDF8FF] flex flex-col items-center py-12 px-4">
             {/* Header Area */}
+            <Toaster />
+
             <div className="text-center mb-10">
                 <div className="bg-purple-500 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <span className="text-white text-xl">🎲</span>
@@ -90,14 +108,18 @@ const Random = () => {
                     </div>
 
                     <div className="flex items-center text-gray-500 font-medium mb-8">
-                        <span className="mr-2 text-lg"></span> {currentPrompt.timeEstimate}
+                        <span className="mr-2 text-lg">⏱️</span> {currentPrompt.timeEstimate}
                     </div>
 
                     <div className="flex gap-3">
-                        <button className="flex-1 py-4 bg-purple-600 text-white font-bold rounded-xl hover:bg-purple-700 transition-all shadow-md active:scale-95">
+                        <button 
+                            onClick={handleCopy}
+                            className="flex-1 py-4 bg-purple-600 text-white font-bold rounded-xl hover:bg-purple-700 transition-all shadow-md active:scale-95">
                             Copy Prompt
                         </button>
-                        <button className="px-4 py-4 border-2 border-gray-100 rounded-xl hover:bg-gray-50 transition-colors">
+                        <button
+                            onClick={handleCopy}
+                            className="px-4 py-4 border-2 border-gray-100 rounded-xl hover:bg-gray-50 transition-colors">
                             🔗
                         </button>
                     </div>
@@ -107,7 +129,7 @@ const Random = () => {
             {/* Action Button */}
             <button 
                 onClick={generateNewPrompt}
-                className="mt-10 px-10 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl font-bold shadow-xl hover:shadow-2xl hover:translate-y-1 transform transition-all active:scale-95 flex items-center gap-3">
+                className="mt-10 px-10 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transform transition-all active:scale-95 flex items-center gap-3">
                     <span className="text-lg">🔄</span>
                     Generate New Prompt
                 </button>

@@ -28,8 +28,8 @@ const Navbar = () => {
                 <NavLink to="/calendar" className={linkStyle}>
                     Calendar
                 </NavLink>
-                <NavLink to="/mood" className={linkStyle}>
-                    Mood
+                <NavLink to="/moodSelector" className={linkStyle}>
+                    Mood Selector
                 </NavLink>
                 <NavLink to="/random" className={linkStyle}>
                     Random
