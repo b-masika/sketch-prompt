@@ -15,35 +15,36 @@ const Home = () => {
             {/* Features Section */}
             <section className="py-20 bg-gray-50 text-center">
                 <h2 className="text-3xl font-bold mb-4">
-                    Threes Ways to Find Inspiration
+                    Three Ways to Find Inspiration
                 </h2>
 
                 <p className="text-gray-600 mb-12">
                     Choose the approach that works best for your creative process
                 </p>
 
-                <div className="flex flex-col md:flex-row justify center gap-8 px-6">
-                    <FeatureCard
-                    icon="🎲"
-                    title="Random Prompts"
-                    description="Get instant inspiration with our random sketch prompt generator"
-                    to="/random"
-                    />
+                <div className="flex flex-col md:flex-row justify-center gap-6 px-6">
+                        <FeatureCard
+                        icon="🎲"
+                        title="Random Prompts"
+                        description="Get instant inspiration with our random sketch prompt generator"
+                        to="/random"
+                        />
 
-                    <FeatureCard
-                    icon="📅"
-                    title="Calendar Prompts"
-                    description="Follow structured daily or weekly prompts to build your sketching habit"
-                    to="calendar"
-                    />
+                        <FeatureCard
+                        icon="📅"
+                        title="Calendar Prompts"
+                        description="Follow structured daily or weekly prompts to build your sketching habit"
+                        to="calendar"
+                        />
 
-                    <FeatureCard
-                    icon="❤️"
-                    title="Mood Selector"
-                    description="Choose your mood or theme and discover matching prompts."
-                    to="/mood"
-                    />
+                        <FeatureCard
+                        icon="❤️"
+                        title="Mood Selector"
+                        description="Choose your mood or theme and discover matching prompts."
+                        to="/mood"
+                        />
                 </div>
+                
             </section>
 
             {/* Example Prompts */}

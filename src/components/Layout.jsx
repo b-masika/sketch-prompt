@@ -4,14 +4,20 @@ import Footer from "./Footer";
 
 const Layout = () => {
     return (
-        <div className="min-h-screen bg-gray-100 text-gray-800">
+        <div className="flex flex-col min-h-screen bg-gray-100 text-gray-800">
+
+            {/* Header */}
             <Navbar />
-            <main className="p-6">
+
+            {/* Main Content */}
+            <main className="flex-grow">
                 <Outlet />
             </main>
+
+            {/* Footer */}
             <Footer/>
         </div>
     );
-}
+};
 
 export default Layout;

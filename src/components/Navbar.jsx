@@ -1,5 +1,5 @@
 // src/components/Navbar.jsx
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const linkStyle = ({ isActive }) =>
@@ -7,11 +7,19 @@ const Navbar = () => {
             ? 'text-blue-500 border-b-2 border-blue-500'
             : 'text-gray-700 hover:text-blue-500';
     return (
-        <nav className="flx justify-between items-center px-8 py-4 shadow-sm bg-white">
-            <div className="flex items-center gap-2 font-bold text-lg">
-                <span className="text-purple-600">🎨</span>
-                Sketch Prompt
-            </div>
+        <nav className="sticky top-0 z-50 flex justify-between items-center px-8 py-4 shadow-sm bg-white">
+
+            {/* LEFT SIDE-Logo */}
+
+            <Link
+                to="/"
+                className="flex items-center gap-2 font-bold text-lg text-gray-800 hover:text-purple-600 transition"
+                >
+
+                <span className="text-purple-600 text-xl">🎨</span>
+                <span>Sketch Prompt</span>
+        
+            </Link>
 
             <div className="flex gap-6 text-sm">
                 <NavLink to="/" className={linkStyle} end>
