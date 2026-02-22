@@ -1,7 +1,17 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import { usePromptStore } from "../store/usePromptStore";
 
 const CTASection = () => {
+    const navigate = useNavigate();
     const generatePrompt= usePromptStore((state) => state.generatePrompt);
+
+    const handleAction = () => {
+        // Trigger logic to pick random prompt in the background
+        generatePrompt();
+
+        navigate("/random");
+    }
 
     return (
         <section className="text-center py-20 bg-gray-100">
@@ -14,7 +24,7 @@ const CTASection = () => {
             </p>
 
             <button 
-            onClick={generatePrompt}
+            onClick={handleAction}
             className="bg-gradient-to-r from-purple-600 to-pink-500 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition"
             >
                 Generate Your First Prompt

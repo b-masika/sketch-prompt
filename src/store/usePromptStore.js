@@ -1,31 +1,20 @@
 import { create } from 'zustand';
+import { prompts } from '../data/prompts';
 
 export const usePromptStore = create((set) => ({
-  prompts: [],
-  Saved: [],
+  currentPrompt: prompts[Math.floor(Math.random() * prompts.length)],
 
   //Set prompts (for random, calendar, mood etc.)
   setPrompts: (data) => set({ prompts: data }),
 
-  // Add to saved (avoiding duplicates)
-  addSaved: (prompt) => {
-    const exists = get().saved.find((p) => p.id === prompt.id);
-    if (!exists) {
-      set((state) => ({
-        saved: [...state.saved, prompt],
-      }));
-    }
-  },
-  
-  // Remove from saved
-  removeSaved: (id) =>
-  set((state) => ({
-    saved: state.saved.filter((prompt) => prompt.id !== id),
-  })),
+  generatePrompt: () => {
+    set((state) => {
+      let nextPrompt;
+      do {
+        nextPrompt = prompts[Math.floor(Math.random() * prompts.length)];
+      } while (nextPrompt.id === state.currentPrompt.id);
+      return { currentPrompt: nextPrompt };
+    })
+  }
 
-  // Remove prompt from main list
- removePrompt: (id) =>
-  set((state) => ({
-    prompts: state.prompts.filter((prompt) => prompt.id !== id),
-  })),
 }));
