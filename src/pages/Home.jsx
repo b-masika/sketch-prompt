@@ -41,7 +41,7 @@ const Home = () => {
                         icon="❤️"
                         title="Mood Selector"
                         description="Choose your mood or theme and discover matching prompts."
-                        to="/mood"
+                        to="/moodSelector"
                         />
                 </div>
                 
