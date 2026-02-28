@@ -1,11 +1,16 @@
 // src/components/Navbar.jsx
 import { Link, NavLink } from 'react-router-dom';
+import { usePromptStore } from '../store/usePromptStore';
 
 const Navbar = () => {
+
+    const savedPromptIds = usePromptStore((state) => state.savedPromptIds);
+
     const linkStyle = ({ isActive }) =>
         isActive
-            ? 'text-blue-500 border-b-2 border-blue-500'
-            : 'text-gray-700 hover:text-blue-500';
+            ? 'text-blue-500 border-b-2 border-blue-500 flex items-center gap-1'
+            : 'text-gray-700 hover:text-blue-500 flex items-center gap-1';
+
     return (
         <nav className="sticky top-0 z-50 flex justify-between items-center px-8 py-4 shadow-sm bg-white">
 
@@ -36,6 +41,11 @@ const Navbar = () => {
                 </NavLink>
                 <NavLink to="/saved" className={linkStyle}>
                     Saved
+                    {savedPromptIds.length > 0 && (
+                        <span className="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded-full min-w-[18px] text-center ml-1">
+                            {savedPromptIds.length}
+                        </span>
+                    )}
                 </NavLink>
             </div>
             

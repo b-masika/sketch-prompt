@@ -1,19 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { prompts } from "../data/prompts";
+import { usePromptStore } from "../store/usePromptStore";
 import toast, {Toaster} from "react-hot-toast";
 
 const Calendar = () => {
     const [view, setView] = useState('daily');
     const [selectedDate, setSelectedDate] = useState(new Date());
-    const [completed, setCompleted] = useState(() => {
-        const saved = localStorage.getItem('sketch_completed');
-        return saved ? JSON.parse(saved) : {};
-    });
 
-    // Sync completed tasks to localStorage
-    useEffect(() => {
-        localStorage.setItem('sketch_completed', JSON.stringify(completed));
-    }, [completed]);
+    // Store Hooks
+    const completedDates = usePromptStore(state => state.completedDates);
+    const toggleStoreComplete = usePromptStore(state => state.toggleComplete);
 
     // Real-Time logic: Get prompt based on the date
     const getPromptForDate = (date) => {
@@ -25,11 +21,21 @@ const Calendar = () => {
     };
 
     const currentPrompt = getPromptForDate(selectedDate);
+    const dateKey = selectedDate.toDateString();
 
-    const toggleCOmplete = (id) => {
-        const dateKey = selectedDate.toDateString();
-        setCompleted(prev => ({ ...prev, [dateKey]: !prev[dateKey] }));
-        if (!completed[dateKey]) toast.success('Daily foal reached!', {icon: '🎨'});
+    const isTodayDone = completedDates[dateKey];
+
+    const handleToggle = () => {
+        toggleStoreComplete(dateKey);
+        if (!isTodayDone) {
+        toast.success('Daily goal reached!', { icon: '🎨' });
+        }
+    };
+
+    const changeDate = (days) => {
+        const newDate = new Date(selectedDate);
+        newDate.setDate(newDate.getDate() + days);
+        setSelectedDate(newDate);
     };
 
     return (
@@ -53,12 +59,12 @@ const Calendar = () => {
             {view === 'daily' ?  (
                 <div className="w-full max-w-3xl animate-fadeIn">
                     <div className="flex items-center justify-between mb-8 bg-white p-4 rounded-2xl shadow-sm">
-                        <button onClick={() => setSelectedDate(new Date(selectedDate.setDate(selectedDate.getDate() - 1)))} className="p-2 text-gray-400">❮</button>
+                        <button onClick={() => changeDate(-1)} className="p-2 text-gray-400">❮</button>
                         <div className="text-center">
                             <h2 className="text-xl font-bold">{selectedDate.toLocaleDateString('en-US', {weekday: 'long', month: 'long', day: "numeric"})}</h2>
-                            <button onClick={() => setSelectedDate(newDate())} className="text-xs text-blue-600 font-bold hover:underline">Today's Prompt</button>
+                            <button onClick={() => setSelectedDate(new Date())} className="text-xs text-blue-600 font-bold hover:underline">Today's Prompt</button>
                         </div>
-                        <button onClick={() => setSelectedDate(new Date(selectedDate.setDate(setSelectedDate.getDate() + 1)))} className="p-2 text-gray-400">❯</button>
+                        <button onClick={() => changeDate(1)} className="p-2 text-gray-400">❯</button>
                     </div>
 
                     <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-purple-50">
@@ -68,11 +74,11 @@ const Calendar = () => {
                                 <h2 className="text-2xl font-bold">{currentPrompt.title}</h2>
                                 <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold uppercase">{currentPrompt.difficulty}</span>
                             </div>
-                            <p className="text-gray-600 mb-6">{currentPrompt.title}</p>
+                            <p className="text-gray-600 mb-6">{currentPrompt.description}</p>
                             <button
-                                onClick={() => toggleCOmplete(currentPrompt.id)}
-                                className={`w-full py-4 rounded-xl font-bold border-2 transition-all ${completed[selectedDate.toDateString()] ? "bg-green-50 border-green-500 text-green-600": "border-gray-200 text-gray-600 hover:bg-gray-50"}`}>
-                                    {completed[selectedDate.toDateString()] ? "✓ Mark as Complete" : "Mark as COmplete"}
+                                onClick={() => handleToggle(currentPrompt.id)}
+                                className={`w-full py-4 rounded-xl font-bold border-2 transition-all ${completedDates[selectedDate.toDateString()] ? "bg-green-50 border-green-500 text-green-600": "border-gray-200 text-gray-600 hover:bg-gray-50"}`}>
+                                    {completedDates[selectedDate.toDateString()] ? "✓ Mark as Complete" : "Mark as Complete"}
                             </button>
                         </div>
                     </div>
@@ -84,7 +90,7 @@ const Calendar = () => {
                         const date = new Date();
                         date.setDate(date.getDate() - date.getDay() + i);
                         const prompt = getPromptForDate(date);
-                        const isDone = completed[date.toDateString()];
+                        const isDone = completedDates[date.toDateString()];
 
                         return (
                             <div key={i} className={`p-4 rounded-2xl border bg-white transition-all ${isDone ? "border-green-500 shadow-green-50" : "border-gray-100" }`}>
