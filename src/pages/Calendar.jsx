@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { prompts } from "../data/prompts";
 import { usePromptStore } from "../store/usePromptStore";
 import toast, {Toaster} from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 const Calendar = () => {
     const [view, setView] = useState('daily');
@@ -18,6 +19,15 @@ const Calendar = () => {
         const oneDay = 1000 * 60 * 60 * 24;
         const dayOfYear = Math.floor(diff / oneDay);
         return prompts[dayOfYear % prompts.length];
+    };
+
+    const getDifficultyColor = (level) => {
+        switch (level?.toLowerCase()) {
+            case "beginner": return "bg-green-100 text-green-700";
+            case "intermediate": return "bg-yellow-100 text-yellow-700";
+            case "advanced": return "bg-red-100 text-red-700";
+            default: return "bg-purple-100 text-purple-700";
+        }
     };
 
     const currentPrompt = getPromptForDate(selectedDate);
@@ -43,10 +53,10 @@ const Calendar = () => {
             <Toaster/>
 
             {/* View Toggle */}
-            <div className="flex bg-white p-1 rounded-xl shadow-inner border border-gray-100 mb-10">
+            <div className="flex bg-white p-1 rounded-2xl shadow-sm border border-purple-100 mb-10">
                 <button 
                     onClick={() => setView('daily')}
-                    className={`px-6 py-2 rounded-lg font-bold transition-all ${view === 'daily' ? "bg-blue-600 text-white shadow-md" : "text-gray-500 hover:text-gray-700"}`}>
+                    className={`px-8 py-2.5 rounded-xl font-bold transition-all ${view === 'daily' ? "bg-purple-600 text-white shadow-lg shadow-purple-200" : "text-gray-400 hover:text-purple-600"}`}>
                         Daily View
                     </button>
                     <button
@@ -67,38 +77,73 @@ const Calendar = () => {
                         <button onClick={() => changeDate(1)} className="p-2 text-gray-400">❯</button>
                     </div>
 
-                    <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-purple-50">
-                        <img src={currentPrompt.image} className="w-full h-72 object-cover" alt={currentPrompt.title}/>
-                        <div className="p-8">
-                            <div className="flex justify-between mb-4">
-                                <h2 className="text-2xl font-bold">{currentPrompt.title}</h2>
-                                <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold uppercase">{currentPrompt.difficulty}</span>
+                    <div className="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-purple-50 group">
+                        <Link to={`/prompt/${currentPrompt.id}`}>
+                            <div className="relative h-80 overflow-hidden">
+                                <img 
+                                    src={currentPrompt.image} 
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                                    alt={currentPrompt.title}
+                                    crossOrigin="anonymous"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span className="bg-white text-gray-900 px-6 py-2 rounded-full font-bold shadow-xl">View Details</span>
+                                </div>
                             </div>
-                            <p className="text-gray-600 mb-6">{currentPrompt.description}</p>
+                        </Link>
+                        
+                        <div className="p-10">
+                            <div className="flex justify-between items-start mb-4">
+                                <h2 className="text-3xl font-black text-gray-900 leading-tight">{currentPrompt.title}</h2>
+                                <span className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest ${getDifficultyColor(currentPrompt.difficulty)}`}>
+                                    {currentPrompt.difficulty}
+                                </span>
+                            </div>
+                            <p className="text-gray-500 text-lg leading-relaxed mb-8">{currentPrompt.description}</p>
+                            
                             <button
-                                onClick={() => handleToggle(currentPrompt.id)}
-                                className={`w-full py-4 rounded-xl font-bold border-2 transition-all ${completedDates[selectedDate.toDateString()] ? "bg-green-50 border-green-500 text-green-600": "border-gray-200 text-gray-600 hover:bg-gray-50"}`}>
-                                    {completedDates[selectedDate.toDateString()] ? "✓ Mark as Complete" : "Mark as Complete"}
+                                onClick={handleToggle}
+                                className={`w-full py-5 rounded-2xl font-black text-lg transition-all active:scale-95 flex items-center justify-center gap-3 ${isTodayDone ? "bg-green-500 text-white shadow-lg shadow-green-100": "bg-gray-900 text-white hover:bg-purple-600 shadow-xl shadow-gray-200"}`}>
+                                    {isTodayDone ? (
+                                        <><span className="text-2xl">✓</span> Completed</>
+                                    ) : "Mark as Complete"}
                             </button>
                         </div>
                     </div>
                 </div>            
-            ): (
+            ) : (
                 // Weekly View: Grid implementation
-                <div className="grid grid-cols-1 md:grid-cols-7 gap-4 w-full max-w-7xl animate-fadeIn">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 w-full max-w-7xl animate-fadeIn">
                     {[...Array(7)].map((_, i) => {
                         const date = new Date();
                         date.setDate(date.getDate() - date.getDay() + i);
                         const prompt = getPromptForDate(date);
                         const isDone = completedDates[date.toDateString()];
+                        const isCurrentSelection = date.toDateString() === new Date().toDateString();
 
                         return (
-                            <div key={i} className={`p-4 rounded-2xl border bg-white transition-all ${isDone ? "border-green-500 shadow-green-50" : "border-gray-100" }`}>
-                                <p className="text-[10px] font-bold text-gray-400 uppercase">{date.toLocaleDateString('en-US', {Weekday: 'short'})}</p>
-                                <p className="text-sm font-bold mb-3">{date.getDate()}</p>
-                                <img src={prompt.image} className="w-full h-20 object-cover rounded-lg mb-2" alt=""/>
-                                <p className="text-[10px] font-bold truncate">{prompt.title}</p>
-                                {isDone && <span className="text-[10px] text-green-600 font-bold">✓ Done</span>}
+                            <div key={i} className={`p-4 rounded-[2rem] border bg-white transition-all flex flex-col ${isDone ? "border-green-200 bg-green-50/30" : isCurrentSelection ? "border-purple-600 ring-2 ring-purple-100" : "border-gray-100" }`}>
+                                <div className="flex justify-between items-start mb-2">
+                                    <div>
+                                        <p className="text-[10px] font-black text-gray-400 uppercase tracking-tighter">{date.toLocaleDateString('en-US', {weekday: 'short'})}</p>
+                                        <p className={`text-lg font-black ${isCurrentSelection ? "text-purple-600" : "text-gray-900"}`}>{date.getDate()}</p>
+                                    </div>
+                                    {isDone && <span className="text-xl">✅</span>}
+                                </div>
+                                
+                                <Link to={`/prompt/${prompt.id}`} className="block group">
+                                    <div className="relative h-24 overflow-hidden rounded-2xl mb-3">
+                                        <img src={prompt.image} className="w-full h-full object-cover transition-transform group-hover:scale-110" alt=""/>
+                                        <div className={`absolute top-2 right-2 w-2 h-2 rounded-full ${getDifficultyColor(prompt.difficulty).split(' ')[0]}`}></div>
+                                    </div>
+                                    <p className="text-[11px] font-bold text-gray-800 leading-tight group-hover:text-purple-600 transition-colors line-clamp-2">{prompt.title}</p>
+                                </Link>
+
+                                <div className="mt-auto pt-3">
+                                    <span className={`text-[8px] font-black uppercase tracking-tighter px-2 py-0.5 rounded-md border ${getDifficultyColor(prompt.difficulty)}`}>
+                                        {prompt.difficulty}
+                                    </span>
+                                </div>
                             </div>
                         );
                     })}

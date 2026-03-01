@@ -2,8 +2,9 @@ import React from "react";
 import { usePromptStore } from "../store/usePromptStore"
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import ImageCredit from "./ImageCredit";
 
-const PromptCard = ({ id, title, description, mood, difficulty, image, tags = [], timeEstimate}) => {
+const PromptCard = ({ id, title, description, mood, difficulty, image, tags = [], timeEstimate, credit, sourceUrl}) => {
 
     const savedPromptIds = usePromptStore((state) => state.savedPromptIds);
     const toggleSave = usePromptStore((state) => state.toggleSave);
@@ -44,30 +45,39 @@ const PromptCard = ({ id, title, description, mood, difficulty, image, tags = []
     
     return (
         <div className="max-w-2xl w-full bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-purple-50 transition-all hover:shadow-2xl mx-auto">
-            <Link to={`/prompt/${id}`} className="relative h-64 overflow-hidden block">
-                <img 
-                    src={image} 
-                    className="w-full h-full object-cover" 
-                    alt={title}
-                    crossOrigin="anonymous"
-                    loading="lazy"
-                    onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = "https://placehold.co/800x600/6366f1/white?text=Click+Generate+Again";}}
-                />
 
-                <button
-                    onClick={(e) => {
-                        e.preventDefault();
-                        toggleSave(id);
-                    }}
-                    className={`absolute top-5 right-5 w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all active:scale-90 z-10 ${
-                        isSaved ? "bg-purple-600 text-white" : "bg-white/90 text-gray-400 hover:bg-white"
-                    }`}
-                    >
-                        <span className={`text-xl ${isSaved ? "text-white" : "text-gray-400"}`}>🔖</span>
-                </button>
-            </Link>
+            <div>
+                <Link to={`/prompt/${id}`} className="relative h-64 overflow-hidden block">
+                    <img 
+                        src={image} 
+                        className="w-full h-full object-cover" 
+                        alt={title}
+                        crossOrigin="anonymous"
+                        loading="lazy"
+                        onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = "https://placehold.co/800x600/6366f1/white?text=Click+Generate+Again";}}
+                    />
+                    </Link>
+
+                    {/* Image Credit Badge */}
+                    <ImageCredit credit={credit} url={sourceUrl || image} />
+
+                    <button
+                        onClick={(e) => {
+                            e.preventDefault();
+                            toggleSave(id);
+                        }}
+                        className={`absolute top-5 right-5 w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all active:scale-90 z-10 ${
+                            isSaved ? "bg-purple-600 text-white" : "bg-white/90 text-gray-400 hover:bg-white"
+                        }`}
+                        >
+                            <span className={`text-xl ${isSaved ? "text-white" : "text-gray-400"}`}>🔖</span>
+                    </button>
+
+            
+            </div>
+            
 
             <div className="p-10 text-left">
                 <div className="flex justify-between items-center mb-3">

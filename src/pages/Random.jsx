@@ -4,6 +4,8 @@ import toast, { Toaster } from "react-hot-toast";
 import { prompts } from "../data/prompts";
 import { usePromptStore } from "../store/usePromptStore";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import ImageCredit from "../components/ImageCredit";
 
 const Random = () => {
     const location = useLocation();
@@ -111,17 +113,26 @@ const Random = () => {
             {/* Main Card */}
             <div className="max-w-2xl w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-purple-50">
                 <div className="relative">
-                    <img 
-                    src={currentPrompt.image} 
-                    alt={currentPrompt.title}
-                    crossOrigin="anonymous"
-                    className="w-full h-72 object-cover"
-                    loading="lazy"
-                    onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = "https://placehold.co/800x600/6366f1/white?text=Click+Generate+Again";
-                    }}
+                    <Link to={`/prompt/${currentPrompt.id}`}>
+                        <img 
+                            src={currentPrompt.image} 
+                            alt={currentPrompt.title}
+                            crossOrigin="anonymous"
+                            className="w-full h-72 object-cover"
+                            loading="lazy"
+                            onError={(e) => {
+                                e.target.onerror = null;
+                                e.target.src = "https://placehold.co/800x600/6366f1/white?text=Click+Generate+Again";
+                            }}
+                        />
+                    </Link>
+
+                    {/* Credit Badge */}
+                    <ImageCredit
+                        credit={currentPrompt.imageCredit}
+                        url={currentPrompt.sourceUrl || currentPrompt.image}
                     />
+
                     <button 
                         onClick={() => toggleSave(currentPrompt.id)}
                         className="absolute top-4 right-4 bg-white/90 p-2 rounded-full shadow-md hover:bg-white transition-colors">

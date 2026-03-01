@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { prompts } from "../data/prompts";
+import { usePromptStore } from "../store/usePromptStore";
 
 const MoodSelector = () => {
+    const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('');
     const [activeMood, setActiveMood] = useState('All');
      const [activeDiff, setActiveDiff] = useState('All');
@@ -89,31 +92,42 @@ const MoodSelector = () => {
             {/* Grid Display */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 {filteredPrompts.map((prompt) => (
-                    <div key={prompt.id} className="bg-white rounded-3xl shadow-md overflow-hidden border border-purple-50">
-                        <img 
-                            src={prompt.image} 
-                            alt={prompt.title}
-                            className="w-full h-48 object-cover"
-                            crossOrigin="anonymous"
-                        />
+                    <div 
+                        key={prompt.id} 
+                        className="group bg-white rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all border border-purple-50 flex flex-col cursor-pointer"
+                        onClick={() => navigate(`/prompt/${prompt.id}`)}
+                    >
+                        <div className="relative overflow-hidden h-56 rounded-t-[2.5rem]">
+                            <img 
+                                src={prompt.image} 
+                                alt={prompt.title}
+                                className="w-full h-48 object-cover"
+                                crossOrigin="anonymous"
+                            />
 
-                        <div className="p-6 flex flex-col flex-grow">
-                            <div className="flex justify-between items-start mb-2">
-                                <h3 className="text-lg font-bold text-gray-800">{prompt.title}</h3>
-                                <span className={`text-[10px] font-bold uppercase py-0.5 px-2 rounded-md ${getDiffColor(prompt.difficulty)}`}>
+                            <div className="absolute top-4 right-4">
+                                <span className={`text-[10px] font-black uppercase py-1.5 px-3 rounded-xl shadow-sm ${getDiffColor(prompt.difficulty)}`}>
                                     {prompt.difficulty}
                                 </span>
                             </div>
-                            <p className="text-gray-500 text-xs mb-4 flex-grow">{prompt.description}</p>
-                            <div className="flex flex-wrap gap-1 mb-4">
-                                {prompt.tags.map(tag => (
-                                    <span key={tag} className="text-[10px] bg-purple-50 text-purple-600 px-2 py-0.5">#{tag}</span>
+                        </div>
+
+                        <div className="p-6 flex flex-col flex-grow">
+                            <h3 className="text-xl font-black text-gray-900 mb-2">{prompt.title}</h3>
+                            <p className="text-gray-400 text-sm mb-6 line-clamp-2 italic leading-relaxed">
+                                {prompt.description}
+                            </p>
+
+                            <div className="flex flex-wrap gap-2 mt-auto">
+                                <span className="text-[10px] font-black bg-purple-600 text-white px-3 py-1 rounded-lg uppercase">
+                                    {prompt.mood}
+                                </span>
+                                {prompt.tags.slice(0, 2).map(tag => (
+                                    <span key={tag} className="text-[10px] font-bold bg-gray-100 text-gray-400 px-3 py-1 rounded-lg uppercase">
+                                        #{tag}
+                                    </span>
                                 ))}
                             </div>
-
-                            <button className="w-full py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors">
-                                Copy Prompt
-                            </button>
                         </div>
                     </div>
                 ))}
@@ -121,10 +135,18 @@ const MoodSelector = () => {
 
              {/* // Empty State Handler */}
             {filteredPrompts.length === 0 && (
-                <div className="text-center py-20">
-                    <p className="text-gray-400 italic">No prompts found matching your filters.</p>
+                <div className="text-center py-40 max-w-2xl mx-auto">
+                    <div className="text-6xl mb-6">🔍</div>
+                    <h3 className="text-2xl font-black text-gray-900 mb-2">No matches found</h3>
+                    <p className="text-gray-400">Try adjusting your mood or searching for something broader like 'city'.</p>
+                    <button 
+                        onClick={() => {setActiveMood('All'); setActiveDiff('All'); setSearchTerm('')}}
+                        className="mt-6 text-purple-600 font-bold underline"
+                    >
+                        Reset all filters
+                    </button>
                 </div>
-        )}
+            )}
     </div>
     );       
 };
