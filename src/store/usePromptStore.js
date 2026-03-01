@@ -28,6 +28,8 @@ export const usePromptStore = create(
         }));
       },
 
+      clearSaved: () => set({ savedPromptIds: [] }),
+
       toggleComplete: (dateString) => {
         set((state) => ({
           completedDates: {

@@ -1,5 +1,7 @@
 // src/App.jsx
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+
 import Layout from './components/Layout';
 
 // Importing page components
@@ -8,6 +10,7 @@ import Calendar from './pages/Calendar';
 import MoodSelector from './pages/MoodSelector';
 import Random from './pages/Random';
 import Saved from './pages/Saved';
+import PromptDetail from './pages/PromptDetail';
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
         <Route path="moodSelector" element={<MoodSelector />} />
         <Route path="random" element={<Random />} />
         <Route path="saved" element={<Saved />} />
+        
+        <Route path="prompt/:id" element={<PromptDetail />} />
+        
       </Route>
     </Routes>
   );

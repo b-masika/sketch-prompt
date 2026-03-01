@@ -1,17 +1,39 @@
 // 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { prompts } from "../data/prompts";
+import { usePromptStore } from "../store/usePromptStore";
+import { useLocation } from "react-router-dom";
 
 const Random = () => {
+    const location = useLocation();
     const [currentPrompt, setCurrentPrompt] = useState(prompts[0]);
+
+    const toastShown = useRef(false);
+
+    const savedPromptIds = usePromptStore((state) => state.savedPromptIds);
+    const toggleSave = usePromptStore((state) => state.toggleSave);
+    const isSaved = savedPromptIds.includes(currentPrompt.id);
 
     useEffect(() => {
         if (prompts && prompts.length > 0) {
+
             const initial = prompts[Math.floor(Math.random() * prompts.length)];
             setCurrentPrompt(initial);
+
+            if (location.state?.fromHero && !toastShown.current) {
+                toast("Fresh inspiration generated!", {
+                    icon: "✨",
+                    duration: 3000,
+                    position: "bottom-center",
+                });
+
+                toastShown.current = true;
+
+                window.history.replaceState({}, document.title);
+            }
         }
-    }, []);
+    }, [location]);
 
     const generateNewPrompt = () => {
         if (!prompts || prompts.length <= 1) return;
@@ -54,6 +76,23 @@ const Random = () => {
 
     };
 
+    const handleShare = async () => {
+        if (navigator.canShare) {
+            try {
+                await navigator.share({
+                    title: currentPrompt.title,
+                    text: currentPrompt.description,
+                    url: window.location.href,
+                });
+            } catch (err) {
+                console.error('Failed to share:', err);
+            }
+        } else {
+            await navigator.clipboard.writeText(window.location.href);
+            toast.success("Link copied to share!");
+        }
+    };
+
     return (
         <div className="min-h-screen bg-[#FDF8FF] flex flex-col items-center py-12 px-4">
             {/* Header Area */}
@@ -75,6 +114,7 @@ const Random = () => {
                     <img 
                     src={currentPrompt.image} 
                     alt={currentPrompt.title}
+                    crossOrigin="anonymous"
                     className="w-full h-72 object-cover"
                     loading="lazy"
                     onError={(e) => {
@@ -82,8 +122,14 @@ const Random = () => {
                         e.target.src = "https://placehold.co/800x600/6366f1/white?text=Click+Generate+Again";
                     }}
                     />
-                    <button className="absolute top-4 right-4 bg-white/90 p-2 rounded-full shadow-md hover:bg-white transition-colors">
-                        🔖
+                    <button 
+                        onClick={() => toggleSave(currentPrompt.id)}
+                        className="absolute top-4 right-4 bg-white/90 p-2 rounded-full shadow-md hover:bg-white transition-colors">
+                        {isSaved ? (
+                            <span className="text-blue-600 text-xl">🔖</span>
+                        ) : (
+                            <span className="text-gray-400 text-xl">🔖</span>
+                        )}
                     </button>
                 </div>
 
@@ -100,7 +146,7 @@ const Random = () => {
                     </p>
 
                     <div className="flex flex-wrap gap-2 mb-6">
-                        {currentPrompt.tags.map(tag => (
+                        {currentPrompt.tags?.map(tag => (
                             <span key={tag} className="text-purple-600 bg-purple-50 px-3 py-1 rounded-lg text-sm font-medium border border-purple-100">
                                 #{tag}
                             </span>
@@ -118,9 +164,10 @@ const Random = () => {
                             Copy Prompt
                         </button>
                         <button
-                            onClick={handleCopy}
-                            className="px-4 py-4 border-2 border-gray-100 rounded-xl hover:bg-gray-50 transition-colors">
-                            🔗
+                            onClick={handleShare}
+                            className="px-4 py-4 border-2 border-gray-100 rounded-xl hover:bg-gray-50 transition-colors text-gray-400"
+                            title="Share Prompt">
+                            📤
                         </button>
                     </div>
                 </div>

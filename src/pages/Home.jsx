@@ -4,8 +4,11 @@ import FeatureCard from "../components/FeatureCard";
 import PromptCard from "../components/PromptCard";
 import CTASection from "../components/CTASection";
 import Footer from "../components/Footer"
+import { prompts } from "../data/prompts";
 
 const Home = () => {
+
+    const featurePrompts = prompts.slice(0, 4)
 
     return (
         <div className="flex flex-col">
@@ -48,36 +51,21 @@ const Home = () => {
             </section>
 
             {/* Example Prompts */}
-            <section className="py-20 text-center">
-                <h2 className="text-3xl font-bold mb-12">
-                    Example Prompts
-                </h2>
+            <section className="py-20 bg-white">
+                <div className="max-w-6xl mx-auto px-6">
+                    <h2 className="text-4xl font-black text-center mb-16 text-gray-900">
+                        Featured Inspirations
+                    </h2>
 
-                <div className="grid md:grid-cols-4 gap-6 px-6 max-w-6xl mx-auto">
-                    <PromptCard
-                    image="https://source.unsplash.com/400x300/?city"
-                    title="City Corner"
-                    description="Sketch the intersection near your favorite coffee shop"
-                    />
-
-                    <PromptCard
-                    image="https://source.unsplash.com/400x300/?architecture"
-                    title="Street View"
-                    description="Capture architectural details from street level."
-                    />
-
-                    <PromptCard
-                    image="https://source.unsplash.com/400x300/?cafe"
-                    title="Cafe Scene"
-                    description="Draw the interior of your local coffee shop."
-                    />
-
-                    <PromptCard
-                    image="https://source.unsplash.com/400x300/?park"
-                    title="Park Life"
-                    description="Sketch people relaxing on a park bench."
-                    />
-                </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        {featurePrompts.map((prompt) => (
+                        <PromptCard
+                        key={prompt.id}
+                        {...prompt}
+                        />
+                    ))}
+                    </div>
+                </div>   
             </section>
 
             <CTASection/>

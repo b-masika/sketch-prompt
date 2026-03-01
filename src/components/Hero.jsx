@@ -1,4 +1,5 @@
 import { usePromptStore } from "../store/usePromptStore";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
     const generatePrompt = usePromptStore((state) => state.generatePrompt);
@@ -12,12 +13,13 @@ const Hero = () => {
                 Never run out of ideas. Get daily prompts designed for everyday sketchers.
             </p>
 
-            <button
-            onClick={generatePrompt}
-            className="bg-white text-purple-600 px-6 py03 rounded-lg font-semibold hover:scale-105 transition"
+            <Link
+            to="/random"
+            state={{ fromHero: true }}
+            className="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:scale-105 transition"
             >
                 Get Started
-            </button>
+            </Link>
         </section>
     );
 };
