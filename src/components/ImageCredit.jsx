@@ -1,15 +1,27 @@
-const ImageCredit = ({ credit, url }) => (
-    <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <a 
-            href={url} 
-            target="_blank" 
-            rel="noreferrer"
-            onClick={(e) => e.stopPropagation()} 
-            className="bg-black/40 backdrop-blur-md px-4 py-2 rounded-full text-[9px] text-white font-black tracking-widest uppercase border border-white/10 hover:bg-black/60 transition-colors whitespace-nowrap"
-        >
-            Ref: {credit} ↗
-        </a>
-    </div>
-);
+import React from "react";
+
+const ImageCredit = ({ credit, url }) => {
+    if (!credit) return null;
+
+    return (
+        <div className="flex justify-center">
+            <a 
+                href={url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()} 
+                className="group flex flex-col items-center justify-center text-center gap-1 bg-black/60 backdrop-blur-xl border border-white/20 px-6 py-3 rounded-3xl transition-all hover:bg-black/80 hover:scale-105 active:scale-95 shadow-2xl"
+            >
+                
+                <span className="text-[9px] font-black uppercase tracking-[0.2em] text-purple-400 opacity-80 leading-none">
+                    Photo Credits:
+                </span>
+                <span className="text-sm font-bold text-white leading-tight flex items-center gap-1">
+                    {credit} <span className="text-white/40 font-light">on Unsplash</span>
+                </span>
+            </a>
+        </div>
+    );
+};
 
 export default ImageCredit;

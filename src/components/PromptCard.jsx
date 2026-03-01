@@ -3,35 +3,14 @@ import { usePromptStore } from "../store/usePromptStore"
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import ImageCredit from "./ImageCredit";
+import SaveButton from "./SaveButton";
+import {CopyButton, ShareButton} from "./ActionButtons";
 
 const PromptCard = ({ id, title, description, mood, difficulty, image, tags = [], timeEstimate, credit, sourceUrl}) => {
 
     const savedPromptIds = usePromptStore((state) => state.savedPromptIds);
     const toggleSave = usePromptStore((state) => state.toggleSave);
     const isSaved = savedPromptIds.includes(id);
-
-    const handleCopy = async (e) => {
-        e.preventDefault();
-        try {
-            const textToCopy = `${title}: ${description}`;
-            await navigator.clipboard.writeText(textToCopy);
-            toast.success("Prompt copied!", { icon: "🎨" });
-        } catch (err) {
-            console.error("Copy failed", err);
-        }
-    };
-
-    const handleShare = async (e) => {
-        e.preventDefault();
-        if (navigator.share) {
-            try {
-                await navigator.share({ title, text: description, url: window.location.href });
-            } catch (err) { console.log(err); }
-        } else {
-            navigator.clipboard.writeText(window.location.href);
-            toast.success("Link copied to share!");
-        }
-    };
 
     // Helper for Difficulty Tag Colors
     const getDifficultyColor = (level) => {
@@ -58,24 +37,9 @@ const PromptCard = ({ id, title, description, mood, difficulty, image, tags = []
                             e.target.onerror = null;
                             e.target.src = "https://placehold.co/800x600/6366f1/white?text=Click+Generate+Again";}}
                     />
-                    </Link>
+                </Link>
 
-                    {/* Image Credit Badge */}
-                    <ImageCredit credit={credit} url={sourceUrl || image} />
-
-                    <button
-                        onClick={(e) => {
-                            e.preventDefault();
-                            toggleSave(id);
-                        }}
-                        className={`absolute top-5 right-5 w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all active:scale-90 z-10 ${
-                            isSaved ? "bg-purple-600 text-white" : "bg-white/90 text-gray-400 hover:bg-white"
-                        }`}
-                        >
-                            <span className={`text-xl ${isSaved ? "text-white" : "text-gray-400"}`}>🔖</span>
-                    </button>
-
-            
+                <SaveButton id={id} className="absolute top-5 right-5" />
             </div>
             
 
@@ -115,21 +79,8 @@ const PromptCard = ({ id, title, description, mood, difficulty, image, tags = []
 
                 {/* --- ACTION BUTTONS (BOTTOM) --- */}
                 <div className="flex gap-4">
-                    {/* 3. PURPLE COPY BUTTON */}
-                    <button 
-                        onClick={handleCopy}
-                        className="flex-1 py-5 bg-purple-600 text-white font-black text-lg rounded-2xl hover:bg-purple-700 transition-all shadow-xl shadow-purple-100 active:scale-95"
-                    >
-                        Copy Prompt
-                    </button>
-
-                    {/* 4. SHARE BUTTON */}
-                    <button 
-                        onClick={handleShare}
-                        className="w-16 h-16 border-2 border-gray-100 rounded-2xl flex items-center justify-center hover:bg-gray-50 transition-colors text-2xl text-gray-400"
-                        title="Share">
-                        📤
-                    </button>
+                    <CopyButton title={title} description={description} />
+                    <ShareButton id={id} title={title} description={description} />
                 </div>
             </div>
         </div>

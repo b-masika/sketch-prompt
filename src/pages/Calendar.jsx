@@ -3,6 +3,9 @@ import { prompts } from "../data/prompts";
 import { usePromptStore } from "../store/usePromptStore";
 import toast, {Toaster} from "react-hot-toast";
 import { Link } from "react-router-dom";
+import ImageCredit from "../components/ImageCredit";
+import { CopyButton, ShareButton } from "../components/ActionButtons";
+import SaveButton from "../components/SaveButton";
 
 const Calendar = () => {
     const [view, setView] = useState('daily');
@@ -86,9 +89,10 @@ const Calendar = () => {
                                     alt={currentPrompt.title}
                                     crossOrigin="anonymous"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                    <span className="bg-white text-gray-900 px-6 py-2 rounded-full font-bold shadow-xl">View Details</span>
-                                </div>
+
+                                <SaveButton id={currentPrompt.id} className="absolute top-6 right-6" />
+                                <ImageCredit credit={currentPrompt.credit} url={currentPrompt.sourceUrl || currentPrompt.image} />
+
                             </div>
                         </Link>
                         

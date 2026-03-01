@@ -1,502 +1,478 @@
 export const prompts = [
     {
+        id: 1,
+        title: "Street Signs Study",
+        category: "Urban Life",
+        mood: "Energetic",
+        difficulty: "intermediate",
+        description: "A continuous line drawing study of overlapping urban geometry and bold typography.",
+        tags: ["signs", "linework", "urban"],
+        timeEstimate: "40",
+        image: "https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/street-sign-lot-7V_Yndv_f_A",
+        credit: "Sardar Faizan",
+        insight: "Try not to lift your pen from the paper. Let the lines cross over—it creates a map-like quality that captures the chaotic pulse of the city."
+    },
+    {
+        id: 2,
+        title: "Window Displays Study",
+        category: "Interior",
+        mood: "Calm",
+        difficulty: "advanced",
+        description: "Capture the complex layering of shop interiors seen through the glass reflections of the street.",
+        tags: ["reflections", "glass", "urban"],
+        timeEstimate: "60",
+        image: "https://images.unsplash.com/photo-1517502474097-f9b30659dadb?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/W7F7T-m-pSg",
+        credit: "John Doe",
+        insight: "Draw what is 'behind' the glass first with darker tones, then use an eraser or white gel pen to add the bright reflections on top."
+    },
+    {
+        id: 3,
+        title: "Door Knobs Study",
+        category: "Architecture",
+        mood: "Focused",
+        difficulty: "beginner",
+        description: "Focus on the metallic luster and the circular perspective of vintage hardware.",
+        tags: ["metal", "macro", "perspective"],
+        timeEstimate: "20",
+        image: "https://images.unsplash.com/photo-1516053303426-62ca539414c5?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/brass-door-knob-p0WUMpXm9A0",
+        credit: "Clint Patterson",
+        insight: "Look for the 'fish-eye' reflection. Metallic spheres always capture a tiny, distorted version of the entire room around them."
+    },
+    {
+        id: 4,
+        title: "Flower Stalls Study",
+        category: "Architecture",
+        mood: "Energetic",
+        difficulty: "intermediate",
+        description: "Sketch the textures of worn wooden crates and the soft explosion of flower petals.",
+        tags: ["floral", "texture", "market"],
+        timeEstimate: "40",
+        image: "https://images.unsplash.com/photo-1507290439931-a861b5a38200?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/flowers-on-stall-N9pP8-mN_X8",
+        credit: "Tine Ivanič",
+        insight: "Don't draw every petal. Group the flowers into 'color clouds' first, then add a few sharp details to define the edges."
+    },
+    {
+        id: 5,
+        title: "Public Fountains Study",
+        category: "Urban Life",
+        mood: "Calm",
+        difficulty: "advanced",
+        description: "Focus on the vanishing point of the water's path and the stone carvings beneath the spray.",
+        tags: ["water", "stone", "statue"],
+        timeEstimate: "60",
+        image: "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/T6Hbe6mHi6g",
+        credit: "Simeon Muller",
+        insight: "Water is about what it reflects. Leave the 'splashes' as pure white paper and shade the water around them to make them pop."
+    },
+    {
+        id: 6,
+        title: "Construction Cranes Study",
+        category: "Interior",
+        mood: "Focused",
+        difficulty: "beginner",
+        description: "Focus on the skeletal lines of the crane against the open sky and its heavy cast shadows.",
+        tags: ["industrial", "lines", "sky"],
+        timeEstimate: "20",
+        image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/W7F7T-m-pSg",
+        credit: "John Doe",
+        insight: "Think of this as a connect-the-dots challenge. Look for the triangles in the crane's structure to keep your perspective accurate."
+    },
+    {
+        id: 7,
+        title: "Subway Entrances Study",
+        category: "Nature",
+        mood: "Energetic",
+        difficulty: "intermediate",
+        description: "Use continuous line drawing to map out the stairwells leading into the earth.",
+        tags: ["subway", "urban", "stairs"],
+        timeEstimate: "40",
+        image: "https://images.unsplash.com/photo-1511283627443-43152a537f9e?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/stairs-p0WUMpXm9A0",
+        credit: "Clint Patterson",
+        insight: "Stairs are just a series of 'Ls'. Focus on the vertical and horizontal rhythms before adding the dark value of the tunnel entrance."
+    },
+    {
+        id: 8,
+        title: "Park Statues Study",
+        category: "Architecture",
+        mood: "Calm",
+        difficulty: "advanced",
+        description: "Capture the play of light on bronze or stone surfaces and the stillness of a public monument.",
+        tags: ["statue", "monument", "lighting"],
+        timeEstimate: "60",
+        image: "https://images.unsplash.com/photo-1517400272457-24e03f9822a7?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/statue-7V_Yndv_f_A",
+        credit: "Sardar Faizan",
+        insight: "Statues don't move, so use this time to study anatomy. Look for where the 'muscle' of the stone meets the soft light of the sky."
+    },
+    {
+        id: 9,
+        title: "Bicycle Racks Study",
+        category: "Urban Life",
+        mood: "Focused",
+        difficulty: "beginner",
+        description: "Emphasize the height and repeating vertical lines of the bike racks and the frames parked within.",
+        tags: ["bicycle", "rhythm", "lines"],
+        timeEstimate: "20",
+        image: "https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/N9pP8-mN_X8",
+        credit: "Tine Ivanič",
+        insight: "Bicycle wheels are tricky. Don't draw every spoke; just draw a soft grey wash for the spinning effect and a few dark lines for the rim."
+    },
+    {
+        id: 10,
+        title: "Cafe Awnings Study",
+        category: "Interior",
+        mood: "Energetic",
+        difficulty: "intermediate",
+        description: "Sketch the textures of the fabric awnings and the shadows they cast on the sidewalk below.",
+        tags: ["cafe", "shadows", "urban"],
+        timeEstimate: "40",
+        image: "https://images.unsplash.com/photo-1508766917616-d22f3f1eea14?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/T6Hbe6mHi6g",
+        credit: "Simeon Muller",
+        insight: "The awning is like a giant umbrella. Focus on the 'folds' of the fabric—they should all point back to the same tension point."
+    },
+    {
+        id: 11,
+        title: "Cobblestone Paths Study",
+        category: "Nature",
+        mood: "Calm",
+        difficulty: "advanced",
+        description: "Focus on the vanishing point and the rhythmic texture of individual stones receding into the distance.",
+        tags: ["texture", "perspective", "path"],
+        timeEstimate: "60",
+        image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/W7F7T-m-pSg",
+        credit: "John Doe",
+        insight: "The stones get smaller and closer together as they move away from you. Don't draw every stone; just suggest the texture with light 'U' shapes."
+    },
+    {
+        id: 12,
+        title: "Fire Escapes Study",
+        category: "Architecture",
+        mood: "Focused",
+        difficulty: "beginner",
+        description: "Focus on the heavy cast shadows and the zigzag pattern of the metal stairs.",
+        tags: ["industrial", "stairs", "shadows"],
+        timeEstimate: "20",
+        image: "https://images.unsplash.com/photo-1515263487990-61b07816b324?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/p0WUMpXm9A0",
+        credit: "Clint Patterson",
+        insight: "Fire escapes are all about line weight. Use thicker lines for the parts of the stairs closest to you to create a sense of depth."
+    },
+    {
+        id: 13,
+        title: "Public Benches Study",
+        category: "Urban Life",
+        mood: "Energetic",
+        difficulty: "intermediate",
+        description: "A study of wood grain and the metal slats of a typical city bench.",
+        tags: ["bench", "wood", "structure"],
+        timeEstimate: "40",
+        image: "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/7V_Yndv_f_A",
+        credit: "Sardar Faizan",
+        insight: "Look at the negative space beneath the bench. Capturing the dark shadows on the ground will define the legs of the bench better than the lines will."
+    },
+    {
+        id: 14,
+        title: "Bus Stop Study",
+        category: "Interior",
+        mood: "Calm",
+        difficulty: "advanced",
+        description: "Capture the glass panels and the modern, sleek lines of a transit shelter.",
+        tags: ["transit", "glass", "urban"],
+        timeEstimate: "60",
+        image: "https://images.unsplash.com/photo-1542361345-89e58247f2d5?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/W7F7T-m-pSg",
+        credit: "John Doe",
+        insight: "Focus on the vertical supports. A bus stop is a grid—once you have the frame, the reflections in the glass become much easier to place."
+    },
+    {
+        id: 15,
+        title: "Mailbox Details Study",
+        category: "Nature",
+        mood: "Focused",
+        difficulty: "beginner",
+        description: "Emphasize the height and the weather-worn texture of a standalone mailbox.",
+        tags: ["object", "metal", "texture"],
+        timeEstimate: "20",
+        image: "https://images.unsplash.com/photo-1510442650500-93217e634e4c?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/p0WUMpXm9A0",
+        credit: "Clint Patterson",
+        insight: "The mailbox is a simple cube with rounded edges. Use a dark wash on one side to show the direction of the sun."
+    },
+    {
+        id: 16,
+        title: "Street Lamps Study",
+        category: "Architecture",
+        mood: "Energetic",
+        difficulty: "intermediate",
+        description: "Sketch the ornate ironwork of a vintage street lamp against the urban background.",
+        tags: ["light", "metal", "vintage"],
+        timeEstimate: "40",
+        image: "https://images.unsplash.com/photo-1515233214530-0870f7d52671?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/T6Hbe6mHi6g",
+        credit: "Simeon Muller",
+        insight: "Look at the silhouette. Street lamps have beautiful, complex outlines—focus on the outer shape before you try to draw the bulb inside."
+    },
+    {
+        id: 17,
+        title: "Water Hydrants Study",
+        category: "Urban Life",
+        mood: "Calm",
+        difficulty: "advanced",
+        description: "Focus on the cast shadows and the chunky, heavy bolts of the hydrant.",
+        tags: ["hydrant", "object", "metal"],
+        timeEstimate: "60",
+        image: "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/N9pP8-mN_X8",
+        credit: "Alexander Andrews",
+        insight: "A hydrant is a series of stacked cylinders. Start with a central vertical line to keep your cylinders centered and even."
+    },
+    {
+        id: 18,
+        title: "Tree Grates Study",
+        category: "Interior",
+        mood: "Focused",
+        difficulty: "beginner",
+        description: "Capture the geometric patterns of the metal grates surrounding city trees.",
+        tags: ["pattern", "geometry", "nature"],
+        timeEstimate: "20",
+        image: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/7V_Yndv_f_A",
+        credit: "Sardar Faizan",
+        insight: "Patterns are meditative. Use a ruler if you want precision, or keep it loose for a more 'organic' urban feel. The contrast between the metal and the dirt is key."
+    },
+    {
+        id: 19,
+        title: "Kiosks & Newsstands",
+        category: "Nature",
+        mood: "Energetic",
+        difficulty: "intermediate",
+        description: "Sketch the colorful textures of magazines and the structure of a small urban kiosk.",
+        tags: ["market", "color", "urban"],
+        timeEstimate: "40",
+        image: "https://images.unsplash.com/photo-1534067783941-51c9c23ecfd3?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/W7F7T-m-pSg",
+        credit: "John Doe",
+        insight: "Use splashes of color for the magazines, but keep the kiosk structure dark. This makes the colorful items 'pop' forward."
+    },
+    {
+        id: 20,
+        title: "Parking Meters Study",
+        category: "Architecture",
+        mood: "Calm",
+        difficulty: "advanced",
+        description: "Capture the glass and metal surfaces of a modern parking payment terminal.",
+        tags: ["industrial", "object", "metal"],
+        timeEstimate: "60",
+        image: "https://images.unsplash.com/photo-1524230572899-a752b3835840?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/T6Hbe6mHi6g",
+        credit: "Simeon Muller",
+        insight: "Focus on the highlights on the screen. The screen is a very dark, glossy surface—leave a few slivers of white paper to show where the sky is reflected."
+    },
+    {
+        id: 21,
+        title: "Brick Textures Study",
+        category: "Urban Life",
+        mood: "Focused",
+        difficulty: "beginner",
+        description: "Emphasize the repeating lines and weathered surfaces of an old brick wall.",
+        tags: ["brick", "texture", "wall"],
+        timeEstimate: "20",
+        image: "https://images.unsplash.com/photo-1523348830342-d01fb915121d?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/p0WUMpXm9A0",
+        credit: "Clint Patterson",
+        insight: "Don't draw every brick. Draw a few detailed bricks in one corner and let the rest of the wall fade into simple horizontal and vertical marks."
+    },
+    {
+        id: 22,
+        title: "Potted Plants Study",
+        category: "Interior",
+        mood: "Energetic",
+        difficulty: "intermediate",
+        description: "Sketch the textures of terracotta and the organic flow of urban greenery.",
+        tags: ["plant", "terracotta", "organic"],
+        timeEstimate: "40",
+        image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/7V_Yndv_f_A",
+        credit: "Sardar Faizan",
+        insight: "Terracotta is a warm, matte surface. Use cross-hatching to show the curve of the pot and a messy, scribbly line for the leaves."
+    },
+    {
+        id: 23,
+        title: "Manhole Covers Study",
+        category: "Nature",
+        mood: "Calm",
+        difficulty: "advanced",
+        description: "Focus on the vanishing point and the intricate circular patterns of the iron street covers.",
+        tags: ["metal", "geometry", "urban"],
+        timeEstimate: "60",
+        image: "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/W7F7T-m-pSg",
+        credit: "John Doe",
+        insight: "A manhole cover on the ground is an ellipse, not a circle. Check your perspective—the closer it is to your feet, the 'rounder' the ellipse becomes."
+    },
+    {
+        id: 24,
+        title: "Traffic Cones Study",
+        category: "Architecture",
+        mood: "Focused",
+        difficulty: "beginner",
+        description: "Focus on the bold orange color and the strong triangular shape of construction cones.",
+        tags: ["cone", "color", "industrial"],
+        timeEstimate: "20",
+        image: "https://images.unsplash.com/photo-1510442650500-93217e634e4c?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/T6Hbe6mHi6g",
+        credit: "Simeon Muller",
+        insight: "Cones are great for studying value. The 'bright' side of the cone will still have shadows—look for the subtle grey tones that define its 3D form."
+    },
+    {
+        id: 25,
+        title: "Graffiti Walls Study",
+        category: "Urban Life",
+        mood: "Energetic",
+        difficulty: "intermediate",
+        description: "A study of color layering and the raw energy of urban street art.",
+        tags: ["art", "color", "graffiti"],
+        timeEstimate: "40",
+        image: "https://images.unsplash.com/photo-1541535881105-89bd81067214?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/N9pP8-mN_X8",
+        credit: "Alexander Andrews",
+        insight: "Don't try to replicate the graffiti exactly. Use bold, sweeping marks to capture the 'gesture' of the paint on the concrete."
+    },
+    {
+        id: 26,
+        title: "Roof Lines Study",
+        category: "Interior",
+        mood: "Calm",
+        difficulty: "advanced",
+        description: "Capture the silhouette of chimney stacks and gables against the evening sky.",
+        tags: ["skyline", "architecture", "silhouette"],
+        timeEstimate: "60",
+        image: "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/W7F7T-m-pSg",
+        credit: "John Doe",
+        insight: "Focus on the 'sky' shape, not the building shape. If you draw the sky correctly, the buildings will appear as a perfect silhouette automatically."
+    },
+    {
+        id: 27,
+        title: "Bridge Cables Study",
+        category: "Nature",
+        mood: "Focused",
+        difficulty: "beginner",
+        description: "Emphasize the vertical tension and the sweeping curves of urban suspension cables.",
+        tags: ["bridge", "lines", "industrial"],
+        timeEstimate: "20",
+        image: "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/p0WUMpXm9A0",
+        credit: "Clint Patterson",
+        insight: "Cables are just lines of tension. Use long, confident strokes—ghost the line in the air a few times before you actually touch the paper."
+    },
+    {
+        id: 28,
+        title: "Street Planters Study",
+        category: "Architecture",
+        mood: "Energetic",
+        difficulty: "intermediate",
+        description: "Sketch the textures of the concrete planters and the spill of greenery onto the pavement.",
+        tags: ["planter", "urban", "greenery"],
+        timeEstimate: "40",
+        image: "https://images.unsplash.com/photo-1521334885634-9547b3b3687d?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/T6Hbe6mHi6g",
+        credit: "Simeon Muller",
+        insight: "Concrete has a very specific pitted texture. Use a dull pencil or a dry brush to suggest the rough surface of the planter box."
+    },
+    {
+        id: 29,
+        title: "Cafe Furniture Study",
+        category: "Urban Life",
+        mood: "Calm",
+        difficulty: "advanced",
+        description: "Focus on the vanishing point and the rhythmic arrangement of bistro chairs.",
+        tags: ["furniture", "bistro", "perspective"],
+        timeEstimate: "60",
+        image: "https://images.unsplash.com/photo-1493857671297-66f157778c6e?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/7V_Yndv_f_A",
+        credit: "Sardar Faizan",
+        insight: "Bistro chairs are usually made of thin, curved metal. Focus on the 'gestural' curve of the backrest before you worry about the legs."
+    },
+    {
+        id: 30,
+        title: "Scaffoldings Study",
+        category: "Interior",
+        mood: "Focused",
+        difficulty: "beginner",
+        description: "Focus on the grid-like pattern of metal bars and the planks of an urban construction site.",
+        tags: ["grid", "industrial", "lines"],
+        timeEstimate: "20",
+        image: "https://images.unsplash.com/photo-1508450859948-4e04f9ad5b13?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/W7F7T-m-pSg",
+        credit: "John Doe",
+        insight: "Scaffolding is a giant 3D box. Draw the main vertical 'poles' first to establish the perspective, then layer the horizontal bars across them."
+    },
+    {
         id: 31,
         title: "Architectural Details",
         category: "Architecture",
         mood: "Focused",
         difficulty: "intermediate",
-        description: "Focus on the architectural details of a single building. Capture ornate windows, doorways, cornices, or unique structural elements.",
-        tags: ["Focused", "architecture", "building", "details"],
-        timeEstimate: "30-45 minutes",
-        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
+        description: "Capture the ornate windows, doorways, and cornices of a single historic building.",
+        tags: ["architecture", "building", "details"],
+        timeEstimate: "45",
+        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/T6Hbe6mHi6g",
+        credit: "Simeon Muller",
+        insight: "Architecture is about rhythm. Find the repeating pattern of the windows first, then add the decorative 'melody' of the stone carvings."
     },
-
     {
         id: 32,
         title: "The Busy Intersection",
         category: "Urban Life",
         mood: "Energetic",
         difficulty: "advanced",
-        description: "Find a safe spot near a major crossing. Try to capture the motion of cars and the flow of pedestrians using quick, gestural lines.",
-        tags: ["Motion", "street-scene", "perspective"],
-        timeEstimate: "60-90 minutes",
-        image: "https://images.unsplash.com/photo-1547448526-5e9d57fa28f7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        description: "Capture the motion of cars and the flow of pedestrians using quick, gestural lines.",
+        tags: ["motion", "street-scene", "perspective"],
+        timeEstimate: "90",
+        image: "https://images.unsplash.com/photo-1547448526-5e9d57fa28f7?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/N9pP8-mN_X8",
+        credit: "Alexander Andrews",
+        insight: "Don't draw the cars; draw the 'blur.' Use long, horizontal strokes to suggest speed and leave parts of the vehicles unfinished to imply movement."
     },
-
     {
         id: 33,
         title: "Cafe Culture",
         category: "Interior",
         mood: "Calm",
         difficulty: "beginner",
-        description: "Sketch the person sitting across from you or the arrangement of coffee cups and pastries on a nearby table.",
-        tags: ["Indoor", "people", "still-life"],
-        timeEstimate: "20-30 minutes",
-        image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80"
+        description: "Sketch the arrangement of coffee cups and pastries on a nearby table.",
+        tags: ["indoor", "people", "still-life"],
+        timeEstimate: "30",
+        image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/n95V6xr62Yk",
+        credit: "Nathan Dumlao",
+        insight: "Focus on the steam and the reflections on the ceramic. Use the white of the paper to show where the light hits the rim of the cup."
     },
-
     {
         id: 34,
         title: "Park Bench Perspectives",
         category: "Nature",
         mood: "Calm",
         difficulty: "beginner",
-        description: "Draw a park bench and the immediate greenery around it. Focus on the textures of the wood and the organic shapes of the leaves.",
-        tags: ["Nature", "texture", "organic"],
-        timeEstimate: "15-20 minutes",
-        image: "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&w=800&q=80"
-    },
-
-    {
-    "id": 1,
-    "title": "Street Signs Study",
-    "category": "Urban Life",
-    "mood": "Energetic",
-    "difficulty": "intermediate",
-    "description": "Use continuous line drawing. Find a local spot with street signs and try to capture the essence of the urban environment.",
-    "tags": [
-      "street signs",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "40 minutes",
-    "image": "https://picsum.photos/id/11/800/600"
-  },
-  {
-    "id": 2,
-    "title": "Window Displays Study",
-    "category": "Interior",
-    "mood": "Calm",
-    "difficulty": "advanced",
-    "description": "Capture the reflection in the glass. Find a local spot with window displays and try to capture the essence of the urban environment.",
-    "tags": [
-      "window displays",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "60 minutes",
-    "image": "https://picsum.photos/id/12/800/600"
-  },
-  {
-    "id": 3,
-    "title": "Door Knobs Study",
-    "category": "Nature",
-    "mood": "Focused",
-    "difficulty": "beginner",
-    "description": "Emphasize the height using vertical lines. Find a local spot with door knobs and try to capture the essence of the urban environment.",
-    "tags": [
-      "door knobs",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "20 minutes",
-    "image": "https://picsum.photos/id/13/800/600"
-  },
-  {
-    "id": 4,
-    "title": "Flower Stalls Study",
-    "category": "Architecture",
-    "mood": "Energetic",
-    "difficulty": "intermediate",
-    "description": "Sketch the textures of the worn materials. Find a local spot with flower stalls and try to capture the essence of the urban environment.",
-    "tags": [
-      "flower stalls",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "40 minutes",
-    "image": "https://picsum.photos/id/14/800/600"
-  },
-  {
-    "id": 5,
-    "title": "Public Fountains Study",
-    "category": "Urban Life",
-    "mood": "Calm",
-    "difficulty": "advanced",
-    "description": "Focus on the vanishing point. Find a local spot with public fountains and try to capture the essence of the urban environment.",
-    "tags": [
-      "public fountains",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "60 minutes",
-    "image": "https://picsum.photos/id/15/800/600"
-  },
-  {
-    "id": 6,
-    "title": "Construction Cranes Study",
-    "category": "Interior",
-    "mood": "Focused",
-    "difficulty": "beginner",
-    "description": "Focus on the cast shadows. Find a local spot with construction cranes and try to capture the essence of the urban environment.",
-    "tags": [
-      "construction cranes",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "20 minutes",
-    "image": "https://picsum.photos/id/16/800/600"
-  },
-  {
-    "id": 7,
-    "title": "Subway Entrances Study",
-    "category": "Nature",
-    "mood": "Energetic",
-    "difficulty": "intermediate",
-    "description": "Use continuous line drawing. Find a local spot with subway entrances and try to capture the essence of the urban environment.",
-    "tags": [
-      "subway entrances",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "40 minutes",
-    "image": "https://picsum.photos/id/17/800/600"
-  },
-  {
-    "id": 8,
-    "title": "Park Statues Study",
-    "category": "Architecture",
-    "mood": "Calm",
-    "difficulty": "advanced",
-    "description": "Capture the reflection in the glass. Find a local spot with park statues and try to capture the essence of the urban environment.",
-    "tags": [
-      "park statues",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "60 minutes",
-    "image": "https://picsum.photos/id/18/800/600"
-  },
-  {
-    "id": 9,
-    "title": "Bicycle Racks Study",
-    "category": "Urban Life",
-    "mood": "Focused",
-    "difficulty": "beginner",
-    "description": "Emphasize the height using vertical lines. Find a local spot with bicycle racks and try to capture the essence of the urban environment.",
-    "tags": [
-      "bicycle racks",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "20 minutes",
-    "image": "https://picsum.photos/id/19/800/600"
-  },
-  {
-    "id": 10,
-    "title": "Cafe Awnings Study",
-    "category": "Interior",
-    "mood": "Energetic",
-    "difficulty": "intermediate",
-    "description": "Sketch the textures of the worn materials. Find a local spot with cafe awnings and try to capture the essence of the urban environment.",
-    "tags": [
-      "cafe awnings",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "40 minutes",
-    "image": "https://picsum.photos/id/20/800/600"
-  },
-  {
-    "id": 11,
-    "title": "Cobblestone Paths Study",
-    "category": "Nature",
-    "mood": "Calm",
-    "difficulty": "advanced",
-    "description": "Focus on the vanishing point. Find a local spot with cobblestone paths and try to capture the essence of the urban environment.",
-    "tags": [
-      "cobblestone paths",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "60 minutes",
-    "image": "https://picsum.photos/id/21/800/600"
-  },
-  {
-    "id": 12,
-    "title": "Fire Escapes Study",
-    "category": "Architecture",
-    "mood": "Focused",
-    "difficulty": "beginner",
-    "description": "Focus on the cast shadows. Find a local spot with fire escapes and try to capture the essence of the urban environment.",
-    "tags": [
-      "fire escapes",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "20 minutes",
-    "image": "https://picsum.photos/id/22/800/600"
-  },
-  {
-    "id": 13,
-    "title": "Street Signs Study",
-    "category": "Urban Life",
-    "mood": "Energetic",
-    "difficulty": "intermediate",
-    "description": "Use continuous line drawing. Find a local spot with street signs and try to capture the essence of the urban environment.",
-    "tags": [
-      "street signs",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "40 minutes",
-    "image": "https://picsum.photos/id/23/800/600"
-  },
-  {
-    "id": 14,
-    "title": "Window Displays Study",
-    "category": "Interior",
-    "mood": "Calm",
-    "difficulty": "advanced",
-    "description": "Capture the reflection in the glass. Find a local spot with window displays and try to capture the essence of the urban environment.",
-    "tags": [
-      "window displays",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "60 minutes",
-    "image": "https://picsum.photos/id/24/800/600"
-  },
-  {
-    "id": 15,
-    "title": "Door Knobs Study",
-    "category": "Nature",
-    "mood": "Focused",
-    "difficulty": "beginner",
-    "description": "Emphasize the height using vertical lines. Find a local spot with door knobs and try to capture the essence of the urban environment.",
-    "tags": [
-      "door knobs",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "20 minutes",
-    "image": "https://picsum.photos/id/25/800/600"
-  },
-  {
-    "id": 16,
-    "title": "Flower Stalls Study",
-    "category": "Architecture",
-    "mood": "Energetic",
-    "difficulty": "intermediate",
-    "description": "Sketch the textures of the worn materials. Find a local spot with flower stalls and try to capture the essence of the urban environment.",
-    "tags": [
-      "flower stalls",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "40 minutes",
-    "image": "https://picsum.photos/id/26/800/600"
-  },
-  {
-    "id": 17,
-    "title": "Public Fountains Study",
-    "category": "Urban Life",
-    "mood": "Calm",
-    "difficulty": "advanced",
-    "description": "Focus on the vanishing point. Find a local spot with public fountains and try to capture the essence of the urban environment.",
-    "tags": [
-      "public fountains",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "60 minutes",
-    "image": "https://picsum.photos/id/27/800/600"
-  },
-  {
-    "id": 18,
-    "title": "Construction Cranes Study",
-    "category": "Interior",
-    "mood": "Focused",
-    "difficulty": "beginner",
-    "description": "Focus on the cast shadows. Find a local spot with construction cranes and try to capture the essence of the urban environment.",
-    "tags": [
-      "construction cranes",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "20 minutes",
-    "image": "https://picsum.photos/id/28/800/600"
-  },
-  {
-    "id": 19,
-    "title": "Subway Entrances Study",
-    "category": "Nature",
-    "mood": "Energetic",
-    "difficulty": "intermediate",
-    "description": "Use continuous line drawing. Find a local spot with subway entrances and try to capture the essence of the urban environment.",
-    "tags": [
-      "subway entrances",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "40 minutes",
-    "image": "https://picsum.photos/id/29/800/600"
-  },
-  {
-    "id": 20,
-    "title": "Park Statues Study",
-    "category": "Architecture",
-    "mood": "Calm",
-    "difficulty": "advanced",
-    "description": "Capture the reflection in the glass. Find a local spot with park statues and try to capture the essence of the urban environment.",
-    "tags": [
-      "park statues",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "60 minutes",
-    "image": "https://picsum.photos/id/30/800/600"
-  },
-  {
-    "id": 21,
-    "title": "Bicycle Racks Study",
-    "category": "Urban Life",
-    "mood": "Focused",
-    "difficulty": "beginner",
-    "description": "Emphasize the height using vertical lines. Find a local spot with bicycle racks and try to capture the essence of the urban environment.",
-    "tags": [
-      "bicycle racks",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "20 minutes",
-    "image": "https://picsum.photos/id/31/800/600"
-  },
-  {
-    "id": 22,
-    "title": "Cafe Awnings Study",
-    "category": "Interior",
-    "mood": "Energetic",
-    "difficulty": "intermediate",
-    "description": "Sketch the textures of the worn materials. Find a local spot with cafe awnings and try to capture the essence of the urban environment.",
-    "tags": [
-      "cafe awnings",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "40 minutes",
-    "image": "https://picsum.photos/id/32/800/600"
-  },
-  {
-    "id": 23,
-    "title": "Cobblestone Paths Study",
-    "category": "Nature",
-    "mood": "Calm",
-    "difficulty": "advanced",
-    "description": "Focus on the vanishing point. Find a local spot with cobblestone paths and try to capture the essence of the urban environment.",
-    "tags": [
-      "cobblestone paths",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "60 minutes",
-    "image": "https://picsum.photos/id/33/800/600"
-  },
-  {
-    "id": 24,
-    "title": "Fire Escapes Study",
-    "category": "Architecture",
-    "mood": "Focused",
-    "difficulty": "beginner",
-    "description": "Focus on the cast shadows. Find a local spot with fire escapes and try to capture the essence of the urban environment.",
-    "tags": [
-      "fire escapes",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "20 minutes",
-    "image": "https://picsum.photos/id/34/800/600"
-  },
-  {
-    "id": 25,
-    "title": "Street Signs Study",
-    "category": "Urban Life",
-    "mood": "Energetic",
-    "difficulty": "intermediate",
-    "description": "Use continuous line drawing. Find a local spot with street signs and try to capture the essence of the urban environment.",
-    "tags": [
-      "street signs",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "40 minutes",
-    "image": "https://picsum.photos/id/35/800/600"
-  },
-  {
-    "id": 26,
-    "title": "Window Displays Study",
-    "category": "Interior",
-    "mood": "Calm",
-    "difficulty": "advanced",
-    "description": "Capture the reflection in the glass. Find a local spot with window displays and try to capture the essence of the urban environment.",
-    "tags": [
-      "window displays",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "60 minutes",
-    "image": "https://picsum.photos/id/36/800/600"
-  },
-  {
-    "id": 27,
-    "title": "Door Knobs Study",
-    "category": "Nature",
-    "mood": "Focused",
-    "difficulty": "beginner",
-    "description": "Emphasize the height using vertical lines. Find a local spot with door knobs and try to capture the essence of the urban environment.",
-    "tags": [
-      "door knobs",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "20 minutes",
-    "image": "https://picsum.photos/id/37/800/600"
-  },
-  {
-    "id": 28,
-    "title": "Flower Stalls Study",
-    "category": "Architecture",
-    "mood": "Energetic",
-    "difficulty": "intermediate",
-    "description": "Sketch the textures of the worn materials. Find a local spot with flower stalls and try to capture the essence of the urban environment.",
-    "tags": [
-      "flower stalls",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "40 minutes",
-    "image": "https://picsum.photos/id/38/800/600"
-  },
-  {
-    "id": 29,
-    "title": "Public Fountains Study",
-    "category": "Urban Life",
-    "mood": "Calm",
-    "difficulty": "advanced",
-    "description": "Focus on the vanishing point. Find a local spot with public fountains and try to capture the essence of the urban environment.",
-    "tags": [
-      "public fountains",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "60 minutes",
-    "image": "https://picsum.photos/id/39/800/600"
-  },
-  {
-    "id": 30,
-    "title": "Construction Cranes Study",
-    "category": "Interior",
-    "mood": "Focused",
-    "difficulty": "beginner",
-    "description": "Focus on the cast shadows. Find a local spot with construction cranes and try to capture the essence of the urban environment.",
-    "tags": [
-      "construction cranes",
-      "sketch",
-      "urban-study"
-    ],
-    "timeEstimate": "20 minutes",
-    "image": "https://picsum.photos/id/40/800/600"
-  }
-
-
-]
+        description: "Draw a park bench and the immediate greenery, focusing on the texture of wood vs. leaves.",
+        tags: ["nature", "texture", "organic"],
+        timeEstimate: "20",
+        image: "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&w=800&q=80",
+        sourceUrl: "https://unsplash.com/photos/7V_Yndv_f_A",
+        credit: "Sardar Faizan",
+        insight: "Contrast is key here. Use hard, straight lines for the man-made bench and soft, organic marks for the bushes behind it."
+    }
+];

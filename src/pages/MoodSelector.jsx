@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { prompts } from "../data/prompts";
 import { usePromptStore } from "../store/usePromptStore";
+import { CopyButton, ShareButton } from "../components/ActionButtons";
+import SaveButton from "../components/SaveButton";
+import ImageCredit from "../components/ImageCredit";
 
 const MoodSelector = () => {
     const navigate = useNavigate();
@@ -95,9 +98,8 @@ const MoodSelector = () => {
                     <div 
                         key={prompt.id} 
                         className="group bg-white rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all border border-purple-50 flex flex-col cursor-pointer"
-                        onClick={() => navigate(`/prompt/${prompt.id}`)}
                     >
-                        <div className="relative overflow-hidden h-56 rounded-t-[2.5rem]">
+                        <div className="relative overflow-hidden h-56 rounded-t-[2.5rem]" onClick={() => navigate(`/prompt/${prompt.id}`)}>
                             <img 
                                 src={prompt.image} 
                                 alt={prompt.title}
@@ -112,11 +114,16 @@ const MoodSelector = () => {
                             </div>
                         </div>
 
-                        <div className="p-6 flex flex-col flex-grow">
-                            <h3 className="text-xl font-black text-gray-900 mb-2">{prompt.title}</h3>
-                            <p className="text-gray-400 text-sm mb-6 line-clamp-2 italic leading-relaxed">
-                                {prompt.description}
-                            </p>
+                        <div className="p-6 flex flex-col flex-grow relative">
+
+                            <SaveButton id={prompt.id} className="absolute -top-6 right-6 scale-90" />
+
+                            <div className="cursor-pointer" onClick={() => navigate(`/prompt/${prompt.id}`)}>
+                                <h3 className="text-xl font-black text-gray-900 mb-2">{prompt.title}</h3>
+                                <p className="text-gray-400 text-sm mb-6 line-clamp-2 italic leading-relaxed">
+                                    {prompt.description}
+                                </p>
+                            </div>
 
                             <div className="flex flex-wrap gap-2 mt-auto">
                                 <span className="text-[10px] font-black bg-purple-600 text-white px-3 py-1 rounded-lg uppercase">

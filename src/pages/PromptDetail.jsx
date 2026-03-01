@@ -3,6 +3,9 @@ import { useParams,useNavigate } from 'react-router-dom';
 import { prompts } from '../data/prompts';
 import toast, {Toaster} from 'react-hot-toast';
 import { usePromptStore } from '../store/usePromptStore';
+import ImageCredit from '../components/ImageCredit';
+import { CopyButton, ShareButton } from '../components/ActionButtons';
+import SaveButton from '../components/SaveButton';
 
 const PromptDetail = () => {
     const { id } = useParams();
@@ -19,11 +22,13 @@ const PromptDetail = () => {
     const isSaved =  prompt ? savedPromptIds.includes(prompt.id) : false;
 
     useEffect(() => {
-        if (prompt?.timeEstimate && !timeActive && timeLeft === 0 ) {
-            const mins = parseInt(prompt.timeEstimate.split('-')[1]) || 20;
-            setTimeLeft(mins * 60);
-        }
-    }, [prompt, timeActive, timeLeft]);
+        if (prompt?.timeEstimate && !timeActive && timeLeft === 0) {
+        // If it's a range like "30-45", take 45. If it's just "40", take 40.
+        const timeParts = prompt.timeEstimate.split('-');
+        const mins = timeParts.length > 1 ? parseInt(timeParts[1]) : parseInt(timeParts[0]);
+        setTimeLeft((mins || 20) * 60);
+    }
+}, [prompt, timeActive, timeLeft]);
 
     useEffect(() => {
         let interval = null;
@@ -44,33 +49,6 @@ const PromptDetail = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         toast.success("Focus mode activated! Happy sketching.");
     }
-
-    const handleShare = async () => {
-        if (navigator.share) {
-            try {
-                await navigator.share({ 
-                    title: prompt.title, 
-                    text: prompt.description, 
-                    url: window.location.href 
-                });
-            } catch (err) { console.log(err); }
-        } else {
-            navigator.clipboard.writeText(window.location.href);
-            toast.success("Link copied to share!");
-        }
-    };
-
-    const handleCopy = async () => {
-        try {
-            // We combine the title and description just like your Card does
-            const textToCopy = `${prompt.title}: ${prompt.description}`;
-            await navigator.clipboard.writeText(textToCopy);
-            toast.success("Prompt copied to clipboard!", { icon: "🎨" });
-        } catch (err) {
-            console.error("Copy failed", err);
-            toast.error("Failed to copy text.");
-        }
-    };
 
     const formatTime = (seconds) => {
         const mins = Math.floor(seconds / 60);
@@ -124,37 +102,25 @@ return (
             )}
 
             {/* Image Credits */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 opacity-60 hover:opacity-100 transition-all">
-                <a 
-                    href={prompt.sourceUrl || prompt.image}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-2 bg-black/30 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/10 text-[10px] text-white font-black tracking-[0.2em] uppercase transition-all hover:bg-black/60 hover:text-purple-300 hover:scale-105 shadow-2xl"
-                    >
-                    <span className="opacity-50">Photo Credits:</span>
-                    <span className=" decoration-purple-500/50">
-                        {prompt.credit}
-                    </span>
-                    <span className="text-[8px] opacity-70">↗</span>
-                </a>
+            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-[60] w-max">
+                <ImageCredit 
+                    credit={prompt.credit} 
+                    url={prompt.sourceUrl} 
+                />
             </div>
+            
+            <SaveButton id={prompt.id} className="absolute top-10 right-10" />
         </div>
 
         {/* Floating Nav */}
         <div className="absolute top-6 left-6 right-6 flex justify-between items-center">
-                <button
-                    onClick={() => navigate(-1)}
-                    className="bg-white/90 backdrop-blur-md px-5 py-3 rounded-2xl shadow-xl hover:bg-white transition-all font-black text-gray-800 text-sm uppercase tracking-tight"
-                >
-                   ← Back
-                </button>
-                <button
-                    onClick={() => toggleSave(prompt.id)}
-                    className={`p-4 rounded-2xl shadow-xl transition-all active:scale-90 ${isSaved ? "bg-purple-600" : "bg-white/90 hover:bg-white"}`}
-                >
-                    <span className={isSaved ? "text-white" : "text-gray-400"}>🔖</span>
-                </button>
-            </div>
+            <button
+                onClick={() => navigate(-1)}
+                className="bg-white/90 backdrop-blur-md px-5 py-3 rounded-2xl shadow-xl hover:bg-white transition-all font-black text-gray-800 text-sm uppercase tracking-tight"
+            >
+                ← Back
+            </button>
+         </div>
 
         {/* UI Content Card */}
         <div className="max-w-3xl mx-auto px-6 -mt-10 relative z-10">
@@ -182,7 +148,7 @@ return (
                         💡 Artist Insight
                     </h3>
                     <p className="text-purple-800 text-center leading-relaxed">
-                        Don't worry about perfect perspective. Capture the <strong>feeling</strong> of the architecture using bold, messy lines. Let the watercolor bleed outside the lines to create energy!
+                       {prompt.insight}
                     </p>
                 </div>
 
@@ -203,22 +169,10 @@ return (
                                 <button onClick={() => setTimeActive(false)} className="mt-4 text-gray-400 hover:text-white text-sm font-bold underline">Stop Timer</button>
                         </div>
                     )}
-
-                        <div className="flex gap-4">
-                            <button onClick={handleCopy}
-                                className="flex-1 py-4 border-2 border-gray-100 rounded-2xl font-bold text-gray-500 hover:bg-gray-50 transition-all"
-                            >
-                                Copy Prompt
-                            </button>
-                            <button onClick={handleShare}
-                                className="flex-1 py-4 border-2 border-gray-100 rounded-2xl font-bold text-gray-500 hover:bg-gray-50 transition-all">
-                                Share Link
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
     );
 };
 

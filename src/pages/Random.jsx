@@ -6,6 +6,8 @@ import { usePromptStore } from "../store/usePromptStore";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import ImageCredit from "../components/ImageCredit";
+import { CopyButton, ShareButton } from "../components/ActionButtons";
+import SaveButton from "../components/SaveButton";
 
 const Random = () => {
     const location = useLocation();
@@ -133,15 +135,7 @@ const Random = () => {
                         url={currentPrompt.sourceUrl || currentPrompt.image}
                     />
 
-                    <button 
-                        onClick={() => toggleSave(currentPrompt.id)}
-                        className="absolute top-4 right-4 bg-white/90 p-2 rounded-full shadow-md hover:bg-white transition-colors">
-                        {isSaved ? (
-                            <span className="text-blue-600 text-xl">🔖</span>
-                        ) : (
-                            <span className="text-gray-400 text-xl">🔖</span>
-                        )}
-                    </button>
+                    <SaveButton id={currentPrompt.id} className="absolute top-6 right-6" />
                 </div>
 
                 <div className="p-8">
@@ -168,18 +162,9 @@ const Random = () => {
                         <span className="mr-2 text-lg">⏱️</span> {currentPrompt.timeEstimate}
                     </div>
 
-                    <div className="flex gap-3">
-                        <button 
-                            onClick={handleCopy}
-                            className="flex-1 py-4 bg-purple-600 text-white font-bold rounded-xl hover:bg-purple-700 transition-all shadow-md active:scale-95">
-                            Copy Prompt
-                        </button>
-                        <button
-                            onClick={handleShare}
-                            className="px-4 py-4 border-2 border-gray-100 rounded-xl hover:bg-gray-50 transition-colors text-gray-400"
-                            title="Share Prompt">
-                            📤
-                        </button>
+                    <div className="flex gap-4">
+                        <CopyButton title={currentPrompt.title} description={currentPrompt.description} />
+                        <ShareButton id={currentPrompt.id} title={currentPrompt.title} description={currentPrompt.description} />
                     </div>
                 </div>
             </div>
