@@ -8,9 +8,9 @@ export const prompts = [
         description: "A continuous line drawing study of overlapping urban geometry and bold typography.",
         tags: ["signs", "linework", "urban"],
         timeEstimate: "40",
-        image: "https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/street-sign-lot-7V_Yndv_f_A",
-        credit: "Sardar Faizan",
+        image: "https://images.unsplash.com/photo-1760262491847-8ec388ef2fbf?q=80&w=676&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/crowded-marketplace-with-signs-and-overhead-wires-at-night-yjkLwvJKjWo",
+        credit: "Zoshua Colah",
         insight: "Try not to lift your pen from the paper. Let the lines cross over—it creates a map-like quality that captures the chaotic pulse of the city."
     },
     {
@@ -22,9 +22,9 @@ export const prompts = [
         description: "Capture the complex layering of shop interiors seen through the glass reflections of the street.",
         tags: ["reflections", "glass", "urban"],
         timeEstimate: "60",
-        image: "https://images.unsplash.com/photo-1517502474097-f9b30659dadb?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/W7F7T-m-pSg",
-        credit: "John Doe",
+        image: "https://images.unsplash.com/photo-1770463133012-2d98df096f29?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/reflection-of-a-street-scene-in-a-coffee-shop-window-NBrCUOT8nrk",
+        credit: "Annie Spratt",
         insight: "Draw what is 'behind' the glass first with darker tones, then use an eraser or white gel pen to add the bright reflections on top."
     },
     {
@@ -36,9 +36,9 @@ export const prompts = [
         description: "Focus on the metallic luster and the circular perspective of vintage hardware.",
         tags: ["metal", "macro", "perspective"],
         timeEstimate: "20",
-        image: "https://images.unsplash.com/photo-1516053303426-62ca539414c5?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/brass-door-knob-p0WUMpXm9A0",
-        credit: "Clint Patterson",
+        image: "https://images.unsplash.com/photo-1565257954217-cd7535e12bcf?q=80&w=700&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/gray-and-brown-decor-KeiHJZWe-z8",
+        credit: "Frank Eiffert",
         insight: "Look for the 'fish-eye' reflection. Metallic spheres always capture a tiny, distorted version of the entire room around them."
     },
     {
@@ -50,9 +50,9 @@ export const prompts = [
         description: "Sketch the textures of worn wooden crates and the soft explosion of flower petals.",
         tags: ["floral", "texture", "market"],
         timeEstimate: "40",
-        image: "https://images.unsplash.com/photo-1507290439931-a861b5a38200?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/flowers-on-stall-N9pP8-mN_X8",
-        credit: "Tine Ivanič",
+        image: "https://images.unsplash.com/photo-1667985501712-139352fe88bc?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/a-flower-shop-with-many-flowers-tm6ME830ahk",
+        credit: "Dana Sarsenbekova",
         insight: "Don't draw every petal. Group the flowers into 'color clouds' first, then add a few sharp details to define the edges."
     },
     {
@@ -64,9 +64,9 @@ export const prompts = [
         description: "Focus on the vanishing point of the water's path and the stone carvings beneath the spray.",
         tags: ["water", "stone", "statue"],
         timeEstimate: "60",
-        image: "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/T6Hbe6mHi6g",
-        credit: "Simeon Muller",
+        image: "https://images.unsplash.com/photo-1694702817310-ef0e347f5766?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/a-fountain-with-water-shooting-out-of-it-g6uQjdRLGls",
+        credit: "Alexey Elfimov",
         insight: "Water is about what it reflects. Leave the 'splashes' as pure white paper and shade the water around them to make them pop."
     },
     {
@@ -78,9 +78,9 @@ export const prompts = [
         description: "Focus on the skeletal lines of the crane against the open sky and its heavy cast shadows.",
         tags: ["industrial", "lines", "sky"],
         timeEstimate: "20",
-        image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/W7F7T-m-pSg",
-        credit: "John Doe",
+        image: "https://images.unsplash.com/photo-1733067996013-ec5b8eec3f52?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/a-yellow-crane-is-on-top-of-a-building-YVP590cWjcE",
+        credit: "Haberdoedas",
         insight: "Think of this as a connect-the-dots challenge. Look for the triangles in the crane's structure to keep your perspective accurate."
     },
     {
@@ -92,9 +92,9 @@ export const prompts = [
         description: "Use continuous line drawing to map out the stairwells leading into the earth.",
         tags: ["subway", "urban", "stairs"],
         timeEstimate: "40",
-        image: "https://images.unsplash.com/photo-1511283627443-43152a537f9e?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/stairs-p0WUMpXm9A0",
-        credit: "Clint Patterson",
+        image: "https://images.unsplash.com/photo-1621319545545-99c5e5aa64d6?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/black-and-white-building-during-daytime-jAky0KCVJ_E",
+        credit: "Christian Lue",
         insight: "Stairs are just a series of 'Ls'. Focus on the vertical and horizontal rhythms before adding the dark value of the tunnel entrance."
     },
     {
@@ -106,9 +106,9 @@ export const prompts = [
         description: "Capture the play of light on bronze or stone surfaces and the stillness of a public monument.",
         tags: ["statue", "monument", "lighting"],
         timeEstimate: "60",
-        image: "https://images.unsplash.com/photo-1517400272457-24e03f9822a7?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/statue-7V_Yndv_f_A",
-        credit: "Sardar Faizan",
+        image: "https://images.unsplash.com/photo-1745113002276-d3a6dd54a46d?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/a-black-and-white-statue-in-a-park-YCUBIep1Yog",
+        credit: "Ahmet Ölçüm",
         insight: "Statues don't move, so use this time to study anatomy. Look for where the 'muscle' of the stone meets the soft light of the sky."
     },
     {
@@ -120,9 +120,9 @@ export const prompts = [
         description: "Emphasize the height and repeating vertical lines of the bike racks and the frames parked within.",
         tags: ["bicycle", "rhythm", "lines"],
         timeEstimate: "20",
-        image: "https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/N9pP8-mN_X8",
-        credit: "Tine Ivanič",
+        image: "https://images.unsplash.com/photo-1515912281500-f7fc34f62d6e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/bicycles-parked-near-grey-metal-fence-uqLvQ6HZzAE",
+        credit: "Josh Bean",
         insight: "Bicycle wheels are tricky. Don't draw every spoke; just draw a soft grey wash for the spinning effect and a few dark lines for the rim."
     },
     {
@@ -134,9 +134,9 @@ export const prompts = [
         description: "Sketch the textures of the fabric awnings and the shadows they cast on the sidewalk below.",
         tags: ["cafe", "shadows", "urban"],
         timeEstimate: "40",
-        image: "https://images.unsplash.com/photo-1508766917616-d22f3f1eea14?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/T6Hbe6mHi6g",
-        credit: "Simeon Muller",
+        image: "https://images.unsplash.com/photo-1759330814434-4843340ee84c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/outdoor-cafe-seating-with-blue-striped-awnings-J6ARiHF_rJo",
+        credit: "Beth Chobanova",
         insight: "The awning is like a giant umbrella. Focus on the 'folds' of the fabric—they should all point back to the same tension point."
     },
     {
@@ -148,9 +148,9 @@ export const prompts = [
         description: "Focus on the vanishing point and the rhythmic texture of individual stones receding into the distance.",
         tags: ["texture", "perspective", "path"],
         timeEstimate: "60",
-        image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/W7F7T-m-pSg",
-        credit: "John Doe",
+        image: "https://images.unsplash.com/photo-1714354948161-3fb2f27bd6e8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/a-dog-sitting-on-a-cobblestone-street-next-to-a-stone-wall-QOFzXrjq6bc",
+        credit: "Antony Henao",
         insight: "The stones get smaller and closer together as they move away from you. Don't draw every stone; just suggest the texture with light 'U' shapes."
     },
     {
@@ -162,9 +162,9 @@ export const prompts = [
         description: "Focus on the heavy cast shadows and the zigzag pattern of the metal stairs.",
         tags: ["industrial", "stairs", "shadows"],
         timeEstimate: "20",
-        image: "https://images.unsplash.com/photo-1515263487990-61b07816b324?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/p0WUMpXm9A0",
-        credit: "Clint Patterson",
+        image: "https://images.unsplash.com/photo-1601785739334-5bc6484d346c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/brown-concrete-building-during-nighttime-52dp9qpDITc",
+        credit: "Anthony Mucci",
         insight: "Fire escapes are all about line weight. Use thicker lines for the parts of the stairs closest to you to create a sense of depth."
     },
     {
@@ -176,9 +176,9 @@ export const prompts = [
         description: "A study of wood grain and the metal slats of a typical city bench.",
         tags: ["bench", "wood", "structure"],
         timeEstimate: "40",
-        image: "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/7V_Yndv_f_A",
-        credit: "Sardar Faizan",
+        image: "https://images.unsplash.com/photo-1630873710708-35262d5f0eaa?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/brown-wooden-bench-near-brown-tree-M1QROTjyqKA",
+        credit: "Lucas Santos",
         insight: "Look at the negative space beneath the bench. Capturing the dark shadows on the ground will define the legs of the bench better than the lines will."
     },
     {
@@ -190,9 +190,9 @@ export const prompts = [
         description: "Capture the glass panels and the modern, sleek lines of a transit shelter.",
         tags: ["transit", "glass", "urban"],
         timeEstimate: "60",
-        image: "https://images.unsplash.com/photo-1542361345-89e58247f2d5?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/W7F7T-m-pSg",
-        credit: "John Doe",
+        image: "https://images.unsplash.com/photo-1759687391122-4e41d779a808?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/woman-sitting-at-bus-stop-checking-phone-ao1P65O0A0Y",
+        credit: "Garvit Nama",
         insight: "Focus on the vertical supports. A bus stop is a grid—once you have the frame, the reflections in the glass become much easier to place."
     },
     {
@@ -204,9 +204,9 @@ export const prompts = [
         description: "Emphasize the height and the weather-worn texture of a standalone mailbox.",
         tags: ["object", "metal", "texture"],
         timeEstimate: "20",
-        image: "https://images.unsplash.com/photo-1510442650500-93217e634e4c?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/p0WUMpXm9A0",
-        credit: "Clint Patterson",
+        image: "https://images.unsplash.com/photo-1765581317683-67c5520b5a06?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/black-mailbox-with-address-2270-on-rural-road-_6iuDsNXFG0",
+        credit: "Anil Baki Durmus",
         insight: "The mailbox is a simple cube with rounded edges. Use a dark wash on one side to show the direction of the sun."
     },
     {
@@ -232,24 +232,24 @@ export const prompts = [
         description: "Focus on the cast shadows and the chunky, heavy bolts of the hydrant.",
         tags: ["hydrant", "object", "metal"],
         timeEstimate: "60",
-        image: "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/N9pP8-mN_X8",
-        credit: "Alexander Andrews",
+        image: "https://images.unsplash.com/photo-1442595417792-914c08ed5a41?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/fire-hydrant-near-beige-painted-wall-WaiPcZlkDFQ",
+        credit: "Ashim D’Silva",
         insight: "A hydrant is a series of stacked cylinders. Start with a central vertical line to keep your cylinders centered and even."
     },
     {
         id: 18,
-        title: "Tree Grates Study",
-        category: "Interior",
+        title: "Urban Lamp Posts Study",
+        category: "Urban Life",
         mood: "Focused",
         difficulty: "beginner",
-        description: "Capture the geometric patterns of the metal grates surrounding city trees.",
-        tags: ["pattern", "geometry", "nature"],
+        description: "Observe and sketch the vertical lines, spacing, and shadows of street lamps in a row.",
+        tags: ["lines", "pattern", "urban", "object", "shadow"],
         timeEstimate: "20",
         image: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80",
         sourceUrl: "https://unsplash.com/photos/7V_Yndv_f_A",
-        credit: "Sardar Faizan",
-        insight: "Patterns are meditative. Use a ruler if you want precision, or keep it loose for a more 'organic' urban feel. The contrast between the metal and the dirt is key."
+        credit: "Kabir Ahmed",
+        insight: "Focus on the vertical line of the lamp post first, then observe how the crossbars, light fixtures, and shadows relate to it. Notice the spacing and rhythm of details against the background — keeping proportions consistent will make your study feel structured and balanced."
     },
     {
         id: 19,
@@ -260,9 +260,9 @@ export const prompts = [
         description: "Sketch the colorful textures of magazines and the structure of a small urban kiosk.",
         tags: ["market", "color", "urban"],
         timeEstimate: "40",
-        image: "https://images.unsplash.com/photo-1534067783941-51c9c23ecfd3?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/W7F7T-m-pSg",
-        credit: "John Doe",
+        image: "https://images.unsplash.com/photo-1570169796972-e37717cba345?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/il-gazzettino-store-front-C-F0o855g74",
+        credit: "Claudio Schwarz",
         insight: "Use splashes of color for the magazines, but keep the kiosk structure dark. This makes the colorful items 'pop' forward."
     },
     {
@@ -271,13 +271,13 @@ export const prompts = [
         category: "Architecture",
         mood: "Calm",
         difficulty: "advanced",
-        description: "Capture the glass and metal surfaces of a modern parking payment terminal.",
-        tags: ["industrial", "object", "metal"],
+        description: "Observe and sketch the glass and metal surfaces of a close-up parking meter, paying attention to reflections, textures, and small structural details.",
+        tags: ["industrial", "object", "metal", "texture", "reflection"],
         timeEstimate: "60",
-        image: "https://images.unsplash.com/photo-1524230572899-a752b3835840?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/T6Hbe6mHi6g",
-        credit: "Simeon Muller",
-        insight: "Focus on the highlights on the screen. The screen is a very dark, glossy surface—leave a few slivers of white paper to show where the sky is reflected."
+        image: "https://images.unsplash.com/photo-1732740985056-b64ed9b92caa?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/a-close-up-of-a-coin-operated-parking-meter-n7xDU59dF-c",
+        credit: "Mark Hebert",
+        insight: "Start by lightly outlining the main shape of the meter, then observe how light hits the metal and screen. Capture reflections and small details like buttons or slots with simple geometric shapes, layering highlights and shadows to give depth and realism."
     },
     {
         id: 21,
@@ -285,13 +285,13 @@ export const prompts = [
         category: "Urban Life",
         mood: "Focused",
         difficulty: "beginner",
-        description: "Emphasize the repeating lines and weathered surfaces of an old brick wall.",
+        description: "Observe and sketch an old brick wall, emphasizing the repeating lines, patterns, and weathered textures without getting lost in every detail.",
         tags: ["brick", "texture", "wall"],
         timeEstimate: "20",
-        image: "https://images.unsplash.com/photo-1523348830342-d01fb915121d?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/p0WUMpXm9A0",
-        credit: "Clint Patterson",
-        insight: "Don't draw every brick. Draw a few detailed bricks in one corner and let the rest of the wall fade into simple horizontal and vertical marks."
+        image: "https://images.unsplash.com/photo-1743912021335-6e394eefbc2f?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/a-close-up-view-of-a-brick-wall-9cDt-h9ow9g",
+        credit: "Nadia Amad",
+        insight: "Focus on a small section of bricks for detailed texture, then suggest the rest with simple horizontal and vertical marks. Let repetition and pattern convey the structure of the wall rather than drawing every brick individually."
     },
     {
         id: 22,
@@ -299,13 +299,13 @@ export const prompts = [
         category: "Interior",
         mood: "Energetic",
         difficulty: "intermediate",
-        description: "Sketch the textures of terracotta and the organic flow of urban greenery.",
-        tags: ["plant", "terracotta", "organic"],
+        description: "Observe and sketch the textures of terracotta pots and the organic shapes of urban greenery. Focus on the contrast between structured pottery and flowing plant forms.",
+        tags: ["plant", "terracotta", "organic", "texture", "interior"],
         timeEstimate: "40",
-        image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/7V_Yndv_f_A",
-        credit: "Sardar Faizan",
-        insight: "Terracotta is a warm, matte surface. Use cross-hatching to show the curve of the pot and a messy, scribbly line for the leaves."
+        image: "https://images.unsplash.com/photo-1748724919660-f3f75d64895a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/potted-plants-arranged-outdoors-in-a-garden-uU63Kj5pSIw",
+        credit: "Karla Arróniz",
+        insight: "Use cross-hatching to convey the curve and solidity of the terracotta pot, then switch to loose, scribbly lines for leaves and foliage. Emphasize the contrast between the structured object and the organic forms growing from it."
     },
     {
         id: 23,
@@ -316,9 +316,9 @@ export const prompts = [
         description: "Focus on the vanishing point and the intricate circular patterns of the iron street covers.",
         tags: ["metal", "geometry", "urban"],
         timeEstimate: "60",
-        image: "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/W7F7T-m-pSg",
-        credit: "John Doe",
+        image: "https://images.unsplash.com/photo-1710682299391-549eec441114?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D00",
+        sourceUrl: "https://unsplash.com/photos/a-manhole-cover-on-a-brick-sidewalk-zui8p1VRjzk",
+        credit: "Fons Heijnsbroek",
         insight: "A manhole cover on the ground is an ellipse, not a circle. Check your perspective—the closer it is to your feet, the 'rounder' the ellipse becomes."
     },
     {
@@ -330,9 +330,9 @@ export const prompts = [
         description: "Focus on the bold orange color and the strong triangular shape of construction cones.",
         tags: ["cone", "color", "industrial"],
         timeEstimate: "20",
-        image: "https://images.unsplash.com/photo-1510442650500-93217e634e4c?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/T6Hbe6mHi6g",
-        credit: "Simeon Muller",
+        image: "https://images.unsplash.com/photo-1557696894-2e49bb9481cd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/three-orange-cones-luVWuWy8H4U",
+        credit: "Donald Martinez",
         insight: "Cones are great for studying value. The 'bright' side of the cone will still have shadows—look for the subtle grey tones that define its 3D form."
     },
     {
@@ -344,9 +344,9 @@ export const prompts = [
         description: "A study of color layering and the raw energy of urban street art.",
         tags: ["art", "color", "graffiti"],
         timeEstimate: "40",
-        image: "https://images.unsplash.com/photo-1541535881105-89bd81067214?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/N9pP8-mN_X8",
-        credit: "Alexander Andrews",
+        image: "https://images.unsplash.com/photo-1729190932076-3830ac4c28dc?q=80&w=1072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/a-street-corner-with-a-building-covered-in-graffiti-ZpNMEPVFWTo",
+        credit: "Sharan Pagadala",
         insight: "Don't try to replicate the graffiti exactly. Use bold, sweeping marks to capture the 'gesture' of the paint on the concrete."
     },
     {
@@ -358,9 +358,9 @@ export const prompts = [
         description: "Capture the silhouette of chimney stacks and gables against the evening sky.",
         tags: ["skyline", "architecture", "silhouette"],
         timeEstimate: "60",
-        image: "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/W7F7T-m-pSg",
-        credit: "John Doe",
+        image: "https://plus.unsplash.com/premium_photo-1766400675536-3e5681356fc7?q=80&w=951&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/rooftops-with-chimneys-under-a-cloudy-sky-wV6Jx1ay9II",
+        credit: "Annie Spratt",
         insight: "Focus on the 'sky' shape, not the building shape. If you draw the sky correctly, the buildings will appear as a perfect silhouette automatically."
     },
     {
@@ -372,9 +372,9 @@ export const prompts = [
         description: "Emphasize the vertical tension and the sweeping curves of urban suspension cables.",
         tags: ["bridge", "lines", "industrial"],
         timeEstimate: "20",
-        image: "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/p0WUMpXm9A0",
-        credit: "Clint Patterson",
+        image: "https://images.unsplash.com/photo-1728922833843-c15dd5a98215?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/a-very-tall-bridge-with-a-bird-flying-over-it-4SQclhaXjDY",
+        credit: "Roger Starnes Sr",
         insight: "Cables are just lines of tension. Use long, confident strokes—ghost the line in the air a few times before you actually touch the paper."
     },
     {
@@ -386,9 +386,9 @@ export const prompts = [
         description: "Sketch the textures of the concrete planters and the spill of greenery onto the pavement.",
         tags: ["planter", "urban", "greenery"],
         timeEstimate: "40",
-        image: "https://images.unsplash.com/photo-1521334885634-9547b3b3687d?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/T6Hbe6mHi6g",
-        credit: "Simeon Muller",
+        image: "https://images.unsplash.com/photo-1725105832518-b39071955214?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/a-concrete-structure-with-vines-growing-on-it-PYsFkfJH4M4",
+        credit: "Naoki Suzuki",
         insight: "Concrete has a very specific pitted texture. Use a dull pencil or a dry brush to suggest the rough surface of the planter box."
     },
     {
@@ -400,9 +400,9 @@ export const prompts = [
         description: "Focus on the vanishing point and the rhythmic arrangement of bistro chairs.",
         tags: ["furniture", "bistro", "perspective"],
         timeEstimate: "60",
-        image: "https://images.unsplash.com/photo-1493857671297-66f157778c6e?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/7V_Yndv_f_A",
-        credit: "Sardar Faizan",
+        image: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/square-brown-wooden-table-8IKf54pc3qk",
+        credit: "Tony Lee",
         insight: "Bistro chairs are usually made of thin, curved metal. Focus on the 'gestural' curve of the backrest before you worry about the legs."
     },
     {
@@ -414,9 +414,9 @@ export const prompts = [
         description: "Focus on the grid-like pattern of metal bars and the planks of an urban construction site.",
         tags: ["grid", "industrial", "lines"],
         timeEstimate: "20",
-        image: "https://images.unsplash.com/photo-1508450859948-4e04f9ad5b13?auto=format&fit=crop&w=800&q=80",
-        sourceUrl: "https://unsplash.com/photos/W7F7T-m-pSg",
-        credit: "John Doe",
+        image: "https://images.unsplash.com/photo-1680538993407-aeacacd7354a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        sourceUrl: "https://unsplash.com/photos/scaffolding-on-the-side-of-a-building-under-construction-jp1gzzvH8RI",
+        credit: "Willy the Wizard",
         insight: "Scaffolding is a giant 3D box. Draw the main vertical 'poles' first to establish the perspective, then layer the horizontal bars across them."
     },
     {
